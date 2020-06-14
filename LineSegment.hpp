@@ -19,12 +19,7 @@ struct LineSegment {
         m = !isVertical ? (dy / dx) : std::numeric_limits<PrecisionT>::infinity();
     }
 
-    bool intersects(const LineSegment<PrecisionT> &other) {
-        // TODO: Implement this
-        return true;
-    }
-
-    bool contains(const Point2D<PrecisionT> &point, bool strictInterior = false) {
+    bool contains(const Point2D<PrecisionT> &point, bool strictInterior = false) const {
         if (strictInterior and (point == top or point == bottom)) {
             return false;
         }
@@ -38,8 +33,15 @@ struct LineSegment {
         return approx_in_range(tx, 0, 1) and approx_in_range(ty, 0, 1) and approx_eq(tx, ty);
     }
 
-    PrecisionT interpY(const PrecisionT &x) {
-        if (isVertical or isHorizontal)
+    PrecisionT interpX(const PrecisionT &y) const {
+        if (isVertical or isHorizontal)  // this is technically incorrect in case the line is horizontal and y != top.y
+            return top.x;
+        else
+            return (y - bottom.y) / m + bottom.x;
+    }
+
+    PrecisionT interpY(const PrecisionT &x) const {
+        if (isVertical or isHorizontal)  // this is technically incorrect in case the line is vertical and x != top.x
             return top.y;
         else
             return m * (x - bottom.x) + bottom.y;
