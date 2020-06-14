@@ -33,8 +33,24 @@ struct Point2D {
         }
     }
 
+    bool operator>(const Point2D &rhs) const {
+        return rhs < *this;
+    }
+
+    bool operator<=(const Point2D &rhs) const {
+        return !(rhs < *this);
+    }
+
+    bool operator>=(const Point2D &rhs) const {
+        return !(*this < rhs);
+    }
+
     bool operator==(const Point2D &rhs) const {
         return approx_eq(x, rhs.x) and approx_eq(y, rhs.y);
+    }
+
+    bool operator!=(const Point2D &rhs) const {
+        return !(rhs == *this);
     }
 };
 
