@@ -2,6 +2,7 @@
 #define LINESEGMENT_HPP
 
 #include <tuple>
+#include <ostream>
 #include "Point2D.hpp"
 
 template<typename PrecisionT = float>
@@ -45,6 +46,11 @@ struct LineSegment {
             return top.y;
         else
             return m * (x - bottom.x) + bottom.y;
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const LineSegment &segment) {
+        os << "top: " << segment.top << " bottom: " << segment.bottom;
+        return os;
     }
 };
 
