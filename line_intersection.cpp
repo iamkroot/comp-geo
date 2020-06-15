@@ -1,16 +1,16 @@
 #include <list>
 #include <map>
 #include <set>
-#include <unordered_set>
+#include "UnorderedSet.hpp"
 #include "LineSegment.hpp"
 
 int main() {
     using PrecisionT = float;
-    using LinePtrs = std::unordered_set<LineSegment<PrecisionT>*>;  /**< list of line segment pointers */
+    using LinePtrs = UnorderedSet<LineSegment<PrecisionT>*>;  /**< list of line segment pointers */
     std::map<Point2D<PrecisionT>, LinePtrs> Q;  /**< Event queue - implicitly stores set U(p) */
     std::list<LineSegment<PrecisionT>> lines = {
             // TODO: Read lines
-//            {{1, 1}, {2, 2}},
+            {{1, 1}, {2, 2}},
             {{2, 2}, {4, 4}},
             {{1, 3}, {3, 1}},
             {{4, 4}, {3, 2}},
@@ -26,6 +26,10 @@ int main() {
     auto inf = std::numeric_limits<PrecisionT>::max();
     auto sweepY = inf;
 
+    /**
+     * @brief Comparator for maintaining Status structure, segments sorted left to right according to abscissa at sweep
+     *     line.
+     */
     auto cmp = [&sweepY](const LineSegment<PrecisionT>* l, const LineSegment<PrecisionT>* r) {
         auto lx = l->interpX(sweepY), rx = r->interpX(sweepY);  /**< get x coords at current sweep line */
         return approx_eq(lx, rx) ? l->top.x < r->top.x : lx < rx;
@@ -33,6 +37,10 @@ int main() {
 
     std::set<LineSegment<PrecisionT>*, decltype(cmp)> T(cmp);  /**< status tree */
 
+    /**
+     * @brief Find segments in T that contain the given point
+     * @return Set of segments with P as bottom endpoint, or containing P in interior
+     */
     auto getContainingSegments = [&T, &inf](const Point2D<PrecisionT> &point) {
         auto leftDummy = new LineSegment<PrecisionT>(point, {-inf, inf});  /**< dummy to find position of segments */
         auto rightDummy = new LineSegment<PrecisionT>(point, {inf, inf});  /**< dummy to find position of segments */
@@ -40,37 +48,38 @@ int main() {
         auto[leftPos, _] = T.insert(leftDummy);
         auto[rightPos, __] = T.insert(rightDummy);
 
-        std::unordered_set<LineSegment<PrecisionT>*> L, C;
+        LinePtrs segments;
 
         for (auto it = leftPos; it != T.end() and it != rightPos; it++) {
             if (it == leftPos)
                 continue;
-            auto line = *it;
-            if (line->bottom == point) {
-                L.insert(line);
-            } else {
-                C.insert(line);
-            }
+            segments.insert(*it);
         }
         T.erase(leftDummy);
         T.erase(rightDummy);
 
-        return std::make_pair(L, C);
+        delete leftDummy;
+        delete rightDummy;
+
+        return segments;
     };
 
-    for (auto &line : lines) {
-        T.insert(&line);
-    }
-    auto [L, C] = getContainingSegments({2, 2});
-    for (const auto &line : L) {
-        std::cout<<*line<<", ";
-    }
-    std::cout<<std::endl;
-    for (const auto &line : C) {
-        std::cout<<*line<<", ";
-    }
-    std::cout<<std::endl;
-    return 0;
+    auto getNeighbors = [&T, &inf](const Point2D<PrecisionT> &point) {
+        auto dummy = new LineSegment<PrecisionT>(point, {point.x, inf});
+
+        auto[pos, _] = T.insert(dummy);
+        auto leftIter = std::prev(pos), rightIter = std::next(pos);
+        LineSegment<PrecisionT>* left = nullptr, * right = nullptr;
+
+        if (leftIter != T.begin() and rightIter != T.end()) {
+            left = *leftIter;
+            right = *rightIter;
+        }
+        T.erase(dummy);
+        delete dummy;
+        return std::make_pair(left, right);
+    };
+
     while (!Q.empty()) {
         auto node = Q.extract(Q.begin());
         auto p = node.key();  /**< Event point */
@@ -78,7 +87,47 @@ int main() {
 
         sweepY = p.y;
         std::cout << p << std::endl;
-        getContainingSegments(p);
+        auto segments = getContainingSegments(p);
+        auto LuCuU = segments | U;
+        if (not LuCuU.empty()) {
+            // TODO: Report intersections
+        }
+
+        // Remove L u C from T
+        for (auto &segment : segments) {
+            T.erase(segment);
+        }
+
+        bool eventLower = true;  /**< Event point is only the lower endpoint of one or more lines */
+
+        decltype(T)::iterator leftMostPos = T.end(), rightMostPos = T.begin();  /**< Store the leftmost and rightmost segments from CuU in T */
+        unsigned long minLeftDist = T.size(), minRightDist = T.size();
+
+        // insert segments from C or U into T
+        for (auto &segment : LuCuU) {
+            if (segment->bottom == p)  // segment is from L
+                continue;
+            auto[pos, _] = T.insert(segment);
+            auto leftDist = std::distance(T.begin(), pos), rightDist = std::distance(pos, T.end());
+            if (leftDist <= minLeftDist) {
+                leftMostPos = pos;
+                minLeftDist = leftDist;
+            }
+            if (rightDist <= minRightDist) {
+                rightMostPos = pos;
+                minRightDist = rightDist;
+            }
+            eventLower = false;  // point is either an upper end point or in interior of a segment
+        }
+        if (eventLower) {  // two segments become neighbors again
+            auto[left, right] = getNeighbors(p);
+            if (left and right) {
+                // TODO: findNewEvent(left, right, p)
+            }
+        } else {
+            // TODO: Use leftMost and rightMost to find new events
+        }
+
     }
     return 0;
 }
