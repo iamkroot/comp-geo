@@ -52,6 +52,34 @@ struct Point2D {
     bool operator!=(const Point2D &rhs) const {
         return !(rhs == *this);
     }
+
+    Point2D operator+(const Point2D &rhs) const {
+        return {x + rhs.x, y + rhs.y};
+    }
+
+    Point2D operator-(const Point2D &rhs) const {
+        return {x - rhs.x, y - rhs.y};
+    }
+
+    /**
+     * @brief 2D cross product
+     * @return
+     */
+    PrecisionT cross(const Point2D &rhs) const {
+        return x * rhs.y - y * rhs.x;
+    }
+
+    /**
+     * @brief Scalar multiplication
+     * @return
+     */
+    Point2D operator*(const PrecisionT &scalar) const {
+        return {x * scalar, y * scalar};
+    }
+
+    PrecisionT dot(const Point2D &rhs) const {
+        return x * rhs.x + y * rhs.y;
+    }
 };
 
 #endif //POINT2D_HPP
