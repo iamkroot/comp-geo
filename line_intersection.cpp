@@ -3,6 +3,7 @@
 #include <set>
 #include "UnorderedSet.hpp"
 #include "LineSegment.hpp"
+#include "Intersection.hpp"
 
 int main() {
     using PrecisionT = float;
@@ -80,6 +81,19 @@ int main() {
         return std::make_pair(left, right);
     };
 
+    auto findNewEvent = [&Q, &sweepY](LineSegment<PrecisionT> &leftSeg, LineSegment<PrecisionT> &rightSeg,
+                                      Point2D<PrecisionT> &point) {
+        auto intersection = Intersection(leftSeg, rightSeg);
+        if (intersection.type == IntersectionType::Intersecting or
+            intersection.type == IntersectionType::CollinearOverlapping) {
+            if ((intersection.start.y < sweepY or
+                 (approx_eq(intersection.start.y, sweepY) and intersection.start.x > point.x)) and
+                not Q.contains(intersection.start)) {
+                Q[intersection.start];
+            }
+        }
+    };
+
     while (!Q.empty()) {
         auto node = Q.extract(Q.begin());
         auto p = node.key();  /**< Event point */
@@ -100,7 +114,8 @@ int main() {
 
         bool eventLower = true;  /**< Event point is only the lower endpoint of one or more lines */
 
-        decltype(T)::iterator leftMostPos = T.end(), rightMostPos = T.begin();  /**< Store the leftmost and rightmost segments from CuU in T */
+        decltype(T)::iterator leftMostPos = T.end();  /**< Store the leftmost segment from CuU in T */
+        decltype(T)::reverse_iterator rightMostPos = T.rend();  /**< Store the rightmost segment from CuU in T */
         unsigned long minLeftDist = T.size(), minRightDist = T.size();
 
         // insert segments from C or U into T
@@ -114,7 +129,7 @@ int main() {
                 minLeftDist = leftDist;
             }
             if (rightDist <= minRightDist) {
-                rightMostPos = pos;
+                rightMostPos = std::make_reverse_iterator(pos);
                 minRightDist = rightDist;
             }
             eventLower = false;  // point is either an upper end point or in interior of a segment
@@ -122,12 +137,19 @@ int main() {
         if (eventLower) {  // two segments become neighbors again
             auto[left, right] = getNeighbors(p);
             if (left and right) {
-                // TODO: findNewEvent(left, right, p)
+                findNewEvent(*left, *right, p);
             }
         } else {
             // TODO: Use leftMost and rightMost to find new events
+            if (leftMostPos != T.end() and leftMostPos != T.begin()) {
+                auto leftPos = std::prev(leftMostPos);
+                findNewEvent(**leftPos, **leftMostPos, p);
+            }
+            if (rightMostPos != T.rend() and rightMostPos != T.rbegin()) {
+                auto rightPos = std::prev(rightMostPos);  // rightMostPos is a reverse iterator
+                findNewEvent(**rightMostPos, **rightPos, p);
+            }
         }
-
     }
     return 0;
 }
