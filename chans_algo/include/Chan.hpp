@@ -5,7 +5,7 @@
 class Chan
 {
     /**
-     * @brief Input points
+     * @brief Input points for computing convex hull
      */
     vector<Point> points;
 

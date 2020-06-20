@@ -20,7 +20,7 @@ class GrahamScan
     void insert(Point &p);
 
     /**
-     * @brief Number of points
+     * @brief Number of points in input
      */
     int numPoints;
 
@@ -30,18 +30,20 @@ class GrahamScan
     vector<Point> convexHull;
 
     /**
-     * @brief Get the Right Tangent Point
+     * @brief Get the Right Tangent Point, using binary search on the convex hull
+     * from the pivot as reference
      * 
      * @param pivot 
-     * @return Point 
+     * @return Point on the convex hull lying on the right tangent
      */
     Point getRightTangentPoint(Point pivot);
 
     /**
-     * @brief Get the Left Tangent Point
+     * @brief Get the Left Tangent Point, using binary search on the convex hull
+     * from the pivot as reference
      * 
      * @param pivot 
-     * @return Point 
+     * @return Point on the convex hull lying on the right tangent
      */
     Point getLeftTangentPoint(Point pivot);
 
@@ -68,12 +70,12 @@ class GrahamScan
     bool isAbove(Point pivot, Point a, Point b);
 
     /**
-     * @brief Number of point in convex hull
+     * @brief Number of points in convex hull
      */
     int convexHullSize;
 
     /**
-     * @brief Get the Point from convex hull
+     * @brief Get the Point from convex hull at position 'idx'
      * 
      * @param idx 
      * @return Point 
