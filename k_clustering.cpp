@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits>
 #include <cmath>
+#include <tuple>
 
 struct Point2D {
     float x, y;
@@ -20,8 +21,9 @@ struct Point2D {
     }
 };
 
-std::pair<std::vector<Point2D>, float> greedyKCenter(const std::vector<Point2D> &points, int k) {
+auto greedyKCenter(const std::vector<Point2D> &points, int k) {
     std::vector<Point2D> centers;
+    std::vector<int> centerLabels(points.size());
     std::vector<float> dist(points.size(), std::numeric_limits<float>::max());
     for (int i = 0; i < k; ++i) {
         auto center_ind = std::distance(dist.begin(), std::max_element(dist.begin(), dist.end()));
@@ -29,10 +31,13 @@ std::pair<std::vector<Point2D>, float> greedyKCenter(const std::vector<Point2D> 
         centers.push_back(center);
         for (int j = 0; j < points.size(); ++j) {
             auto d = center.dist_sq(points[j]);
-            dist[j] = std::min(dist[j], d);
+            if (d < dist[j]) {
+                dist[j] = d;
+                centerLabels[j] = i;
+            }
         }
     }
-    return {centers, std::sqrt(*std::max_element(dist.begin(), dist.end()))};
+    return std::make_tuple(centers, centerLabels, dist);
 }
 
 auto readDataset(std::istream* file) {
@@ -57,10 +62,18 @@ int main(int argc, char* argv[]) {
         input = &file;
     }
     auto[points, k] = readDataset(input);
-    auto[cent, d] = greedyKCenter(points, k);
-    std::cout << d << std::endl;
-    for (const auto &c : cent) {
-        std::cout << c << ", ";
+    auto[centers, labels, dist] = greedyKCenter(points, k);
+
+    for (const auto &c : centers) {
+        std::cout << c << std::endl;
+    }
+
+    for (const auto &label : labels) {
+        std::cout << label << std::endl;
+    }
+
+    for (const auto &d : dist) {
+        std::cout << d << std::endl;
     }
     return 0;
 }
