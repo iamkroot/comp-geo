@@ -1,4 +1,5 @@
 #include <vector>
+#include <fstream>
 #include <iostream>
 #include <limits>
 #include <cmath>
@@ -20,7 +21,6 @@ struct Point2D {
 };
 
 std::pair<std::vector<Point2D>, float> greedyKCenter(const std::vector<Point2D> &points, int k) {
-    float max_dist = std::numeric_limits<float>::max();
     std::vector<Point2D> centers;
     std::vector<float> dist(points.size(), std::numeric_limits<float>::max());
     for (int i = 0; i < k; ++i) {
@@ -35,9 +35,29 @@ std::pair<std::vector<Point2D>, float> greedyKCenter(const std::vector<Point2D> 
     return {centers, std::sqrt(*std::max_element(dist.begin(), dist.end()))};
 }
 
-int main() {
-    std::vector<Point2D> points = {};
-    auto[cent, d] = greedyKCenter(points, 0);
+auto readDataset(std::istream* file) {
+    std::vector<Point2D> points;
+    int k, n;
+    (*file) >> n >> k;
+    while (n--) {
+        Point2D point(0, 0);
+        (*file) >> point.x >> point.y;
+        points.push_back(point);
+    }
+    return std::make_pair(points, k);
+}
+
+int main(int argc, char* argv[]) {
+    std::istream* input;
+    std::ifstream file;
+    if (argc < 2) {
+        input = &std::cin;
+    } else {
+        file.open(argv[1]);
+        input = &file;
+    }
+    auto[points, k] = readDataset(input);
+    auto[cent, d] = greedyKCenter(points, k);
     std::cout << d << std::endl;
     for (const auto &c : cent) {
         std::cout << c << ", ";
