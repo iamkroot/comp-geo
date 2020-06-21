@@ -80,13 +80,6 @@ Point GrahamScan::getRightTangentPoint(Point pivot)
     if (convexHullSize < 3)
         return JarvisStep(pivot, convexHull).getNext();
 
-    if (getPoint(0) == pivot)
-        return getPoint(1);
-    if (getPoint(1) == pivot)
-        return getPoint(2);
-    if (getPoint(convexHullSize - 1) == pivot)
-        return getPoint(convexHullSize);
-
     // Check if convexHull[0] if local maximum
     if (isBelow(pivot, getPoint(1), getPoint(0)) &&
         !isAbove(pivot, getPoint(convexHullSize - 1), getPoint(0)))
@@ -96,16 +89,6 @@ Point GrahamScan::getRightTangentPoint(Point pivot)
     while (true)
     {
         int mid = (low + high) / 2;
-        if (getPoint(low) == pivot)
-            return getPoint(low + 1);
-        if (getPoint(low + 1) == pivot)
-            return getPoint(low + 2);
-        if (getPoint(mid + 1) == pivot)
-            return getPoint(mid + 2);
-        if (getPoint(mid) == pivot)
-            return getPoint(mid + 1);
-        if (getPoint(mid - 1) == pivot)
-            return getPoint(mid);
         bool isMidDown = isBelow(pivot, getPoint(mid + 1), getPoint(mid));
         if (isMidDown && !isAbove(pivot, getPoint(mid - 1), getPoint(mid)))
             return getPoint(mid);
