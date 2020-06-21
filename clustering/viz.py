@@ -48,9 +48,9 @@ def parse_output(output, n, k):
     return centers, labels, dist, runtime
 
 
-def plot_single(ax, points, labels, centers, draw_legends=True):
+def plot_single(ax, points, labels, centers, draw_legends=False):
     scatter1 = ax.scatter(points[:, 0], points[:, 1], marker=".", c=labels)
-    scatter2 = ax.scatter(centers[:, 0], centers[:, 1], marker=".", label="Center")
+    scatter2 = ax.scatter(centers[:, 0], centers[:, 1], marker=".", color="r", label="Center")
     if draw_legends:
         handles1, labels1 = scatter1.legend_elements(fmt="Cluster {x:.0f}")
         ax.legend([*handles1, scatter2], [*labels1, "Center"])
@@ -70,7 +70,11 @@ def plot(fig_path, points, opt_labels, opt_centers, opt_max_dist, approx_labels,
     plt.close(fig)
 
 
-def run(exec_path: Path, results_dir: Path, run_id: str, points, opt_labels, opt_centers, do_plot=True):
+def apply_labels_sorted(centers, labels):
+    return {cur_label: new_label for new_label, cur_label in enumerate(centers[:, 1].argsort())}
+
+
+def run(exec_path: Path, results_dir: Path, run_id: str, points: np.ndarray, opt_labels, opt_centers, do_plot=True):
     opt_max_dist = max(dist(point, opt_centers[label]) for point, label in zip(points, opt_labels))
 
     output = run_clustering(exec_path, points, len(opt_centers))
@@ -79,8 +83,14 @@ def run(exec_path: Path, results_dir: Path, run_id: str, points, opt_labels, opt
     approx_centers, approx_labels, approx_dist, runtime = parse_output(output, len(points), len(opt_centers))
     approx_max_dist = max(approx_dist)
 
+
     if do_plot:
-        plot(results_dir / "images" / run_id, points, opt_labels, opt_centers, opt_max_dist, approx_labels, approx_centers, approx_max_dist)
+        opt_labels_map = apply_labels_sorted(opt_centers, opt_labels)
+        approx_labels_map = apply_labels_sorted(approx_centers, approx_labels)
+        indices = np.random.permutation(len(opt_centers))
+        shuf_opt_labels = np.array([indices[opt_labels_map[x]] for x in opt_labels])
+        shuf_approx_labels = np.array([indices[approx_labels_map[x]] for x in approx_labels])
+        plot(results_dir / "images" / run_id, points, shuf_opt_labels, opt_centers, opt_max_dist, shuf_approx_labels, approx_centers, approx_max_dist)
 
     np.savez(results_dir / "data" / run_id, points=points, opt_labels=opt_labels, opt_centers=opt_centers, approx_labels=approx_labels, approx_centers=approx_centers)
     return opt_max_dist, approx_max_dist, runtime
@@ -96,7 +106,7 @@ def gen_log_scale(start=1, stop=1e9, scale=10):
 
 
 def gen_imp_nums(start=10, stop=1e7, scale=10):
-    while start <= stop:
+    while start * scale <= stop:
         yield start
         yield start * 2
         yield start * 5
