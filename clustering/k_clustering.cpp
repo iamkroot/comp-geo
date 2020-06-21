@@ -4,6 +4,7 @@
 #include <limits>
 #include <cmath>
 #include <tuple>
+#include "Stopwatch.hpp"
 
 struct Point2D {
     float x, y;
@@ -62,7 +63,9 @@ int main(int argc, char* argv[]) {
         input = &file;
     }
     auto[points, k] = readDataset(input);
+    Stopwatch stopwatch;
     auto[centers, labels, dist] = greedyKCenter(points, k);
+    auto runtime = stopwatch.stop();
 
     for (const auto &c : centers) {
         std::cout << c << std::endl;
@@ -75,5 +78,7 @@ int main(int argc, char* argv[]) {
     for (const auto &d : dist) {
         std::cout << d << std::endl;
     }
+
+    std::cout<<runtime<<std::endl;
     return 0;
 }

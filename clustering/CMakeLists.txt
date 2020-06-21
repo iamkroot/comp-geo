@@ -3,4 +3,4 @@ project(comp_geo)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(clustering k_clustering.cpp)
+add_executable(clustering k_clustering.cpp Stopwatch.hpp)
