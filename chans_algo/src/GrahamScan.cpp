@@ -92,7 +92,7 @@ Point<T> GrahamScan<T>::getRightTangentPoint(Point<T> pivot)
 {
     if (convexHullSize < 3)
         return JarvisStep<T>(pivot, convexHull).getNext();
-
+        
     // Check if convexHull[0] if local maximum
     if (isBelow(pivot, getPoint(1), getPoint(0)) &&
         !isAbove(pivot, getPoint(convexHullSize - 1), getPoint(0)))

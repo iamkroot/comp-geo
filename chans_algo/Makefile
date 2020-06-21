@@ -12,8 +12,14 @@ BUILD = $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 chan: $(BUILD) main.cpp
 	$(CXX) $(CXXFLAGS) $^ -o main_chan
 
-test: $(BUILD) ./tests/tester.cpp
-	$(CXX) $(CXXFLAGS) $^ -o test
+test_int: $(BUILD) ./tests/tester.cpp
+	$(CXX) $(CXXFLAGS) $^ -o test_int
+
+test_long: $(BUILD) ./tests/tester_long.cpp
+	$(CXX) $(CXXFLAGS) $^ -o test_long
+
+test_double: $(BUILD) ./tests/tester_double.cpp
+	$(CXX) $(CXXFLAGS) $^ -o test_double
 
 bs_test: $(BUILD) ./tests/bs_tester.cpp
 	$(CXX) $(CXXFLAGS) $^ -o bs_test
