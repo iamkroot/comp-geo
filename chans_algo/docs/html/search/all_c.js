@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y',['y',['../classPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7',1,'Point']]]
+  ['utils',['Utils',['../classUtils.html',1,'Utils'],['../classUtils.html#a452e78692c87ed5c7c993b6c6ac4981a',1,'Utils::Utils()']]],
+  ['utils_2ehpp',['Utils.hpp',['../Utils_8hpp.html',1,'']]]
 ];

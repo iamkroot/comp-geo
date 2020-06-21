@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['getconvexhull',['getConvexHull',['../classChan.html#a1382d15aa44de4e9182f2cc74cbf1dea',1,'Chan::getConvexHull()'],['../classGrahamScan.html#a374db012cb6a96fcb8530d07cddd498e',1,'GrahamScan::getConvexHull()']]],
-  ['getlefttangentpoint',['getLeftTangentPoint',['../classGrahamScan.html#a25068b534491cef265e5d7c038f82e7d',1,'GrahamScan']]],
-  ['getnext',['getNext',['../classJarvisStep.html#abe7e3817650fed66b7c5109839d355bc',1,'JarvisStep']]],
-  ['getpoint',['getPoint',['../classGrahamScan.html#a79b1642bc347f2f6e517b2f3415e871d',1,'GrahamScan']]],
-  ['getrighttangentpoint',['getRightTangentPoint',['../classGrahamScan.html#ae01e3fe104346f991f951a6843a15893',1,'GrahamScan']]],
-  ['gettangentpoints',['getTangentPoints',['../classGrahamScan.html#ae308d2013337902df55fa4feae2aec60',1,'GrahamScan']]],
-  ['grahamscan',['GrahamScan',['../classGrahamScan.html',1,'GrahamScan'],['../classGrahamScan.html#aa774467ce21242d7ef7ffbd1680a6d61',1,'GrahamScan::GrahamScan()']]],
-  ['grahamscan_2ecpp',['GrahamScan.cpp',['../GrahamScan_8cpp.html',1,'']]],
-  ['grahamscan_2ehpp',['GrahamScan.hpp',['../GrahamScan_8hpp.html',1,'']]]
+  ['chan',['Chan',['../classChan.html',1,'Chan'],['../classChan.html#a0b17366e6548967ea27702d9ae37f394',1,'Chan::Chan()']]],
+  ['chan_2ecpp',['Chan.cpp',['../Chan_8cpp.html',1,'']]],
+  ['chan_2ehpp',['Chan.hpp',['../Chan_8hpp.html',1,'']]],
+  ['comparator',['Comparator',['../classGrahamScan_1_1Comparator.html',1,'GrahamScan::Comparator'],['../classGrahamScan_1_1Comparator.html#a8d8fd2d1f831e3d9271a8b5e29dadddf',1,'GrahamScan::Comparator::Comparator()']]],
+  ['computepartitions',['computePartitions',['../classChan.html#a767dbe606a11c923d4effd7250529900',1,'Chan']]],
+  ['convexhull',['convexHull',['../classChan.html#a983333f17209e944e2218f83c6db04a8',1,'Chan::convexHull()'],['../classGrahamScan.html#a9e8a22177ddeb913962a75e5b9f00dc9',1,'GrahamScan::convexHull()']]],
+  ['convexhullsize',['convexHullSize',['../classChan.html#ae77990baa3fc9811d17fed02e4b73d70',1,'Chan::convexHullSize()'],['../classGrahamScan.html#a201595ff26bee9c3084e8fce0e7643ad',1,'GrahamScan::convexHullSize()']]],
+  ['cross',['cross',['../classPoint.html#adcccafffe2054603d2c7bfe949a3675b',1,'Point']]]
 ];

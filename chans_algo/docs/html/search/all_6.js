@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['operator_3c',['operator&lt;',['../classPoint.html#a9d0a9f62ffc7345f802085706101cd62',1,'Point']]],
-  ['operator_3d_3d',['operator==',['../classPoint.html#a1a69a0a1dea189f07e044f6eb868937d',1,'Point']]],
-  ['order',['order',['../classGrahamScan.html#ab90660de0ce0be702da0760f37f7d797',1,'GrahamScan']]],
-  ['orient',['orient',['../classPoint.html#a16b12efe91681c389f0546a74fdf0886',1,'Point']]]
+  ['nextpoint',['nextPoint',['../classJarvisStep.html#a503a36c2f9fcd1bcb7a88b46849142fc',1,'JarvisStep']]],
+  ['numpoints',['numPoints',['../classChan.html#a9f906daeea67573ca4fc09da32d2395f',1,'Chan::numPoints()'],['../classGrahamScan.html#a6d28337ba41b02338253a3ebbec09463',1,'GrahamScan::numPoints()'],['../classJarvisStep.html#a7616fe9780bd2285b3d01b8262d719bb',1,'JarvisStep::numPoints()']]]
 ];

@@ -62,6 +62,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -73,6 +74,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="GrahamScan_8hpp_source.html">GrahamScan.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html">Comparator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare ordering of points for graham's scan.  <a href="classGrahamScan_1_1Comparator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa774467ce21242d7ef7ffbd1680a6d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#aa774467ce21242d7ef7ffbd1680a6d61">GrahamScan</a> (vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &amp;points)</td></tr>
@@ -80,21 +87,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa774467ce21242d7ef7ffbd1680a6d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a374db012cb6a96fcb8530d07cddd498e"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a374db012cb6a96fcb8530d07cddd498e">getConvexHull</a> ()</td></tr>
 <tr class="separator:a374db012cb6a96fcb8530d07cddd498e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae308d2013337902df55fa4feae2aec60"><td class="memItemLeft" align="right" valign="top">pair&lt; <a class="el" href="classPoint.html">Point</a>, <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ae308d2013337902df55fa4feae2aec60">getTangentPoints</a> (<a class="el" href="classPoint.html">Point</a> pivot)</td></tr>
-<tr class="memdesc:ae308d2013337902df55fa4feae2aec60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Tangent Points using binary search in O(log(numPoints))  <a href="#ae308d2013337902df55fa4feae2aec60">More...</a><br /></td></tr>
-<tr class="separator:ae308d2013337902df55fa4feae2aec60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01e3fe104346f991f951a6843a15893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ae01e3fe104346f991f951a6843a15893">getRightTangentPoint</a> (<a class="el" href="classPoint.html">Point</a> pivot)</td></tr>
+<tr class="memdesc:ae01e3fe104346f991f951a6843a15893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Right Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference.  <a href="#ae01e3fe104346f991f951a6843a15893">More...</a><br /></td></tr>
+<tr class="separator:ae01e3fe104346f991f951a6843a15893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a4996cb0d2deb3cd6f9cb3df99b91e7e8">insert</a> (<a class="el" href="classPoint.html">Point</a> &amp;p)</td></tr>
 <tr class="memdesc:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new point into the stack of partially constructed convex hull.  <a href="#a4996cb0d2deb3cd6f9cb3df99b91e7e8">More...</a><br /></td></tr>
 <tr class="separator:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01e3fe104346f991f951a6843a15893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ae01e3fe104346f991f951a6843a15893">getRightTangentPoint</a> (<a class="el" href="classPoint.html">Point</a> pivot)</td></tr>
-<tr class="memdesc:ae01e3fe104346f991f951a6843a15893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Right Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference.  <a href="#ae01e3fe104346f991f951a6843a15893">More...</a><br /></td></tr>
-<tr class="separator:ae01e3fe104346f991f951a6843a15893"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25068b534491cef265e5d7c038f82e7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a25068b534491cef265e5d7c038f82e7d">getLeftTangentPoint</a> (<a class="el" href="classPoint.html">Point</a> pivot)</td></tr>
-<tr class="memdesc:a25068b534491cef265e5d7c038f82e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Left Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference.  <a href="#a25068b534491cef265e5d7c038f82e7d">More...</a><br /></td></tr>
-<tr class="separator:a25068b534491cef265e5d7c038f82e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff60053b35be2c735b37dd88e079d460"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#aff60053b35be2c735b37dd88e079d460">isBelow</a> (<a class="el" href="classPoint.html">Point</a> pivot, <a class="el" href="classPoint.html">Point</a> a, <a class="el" href="classPoint.html">Point</a> b)</td></tr>
 <tr class="memdesc:aff60053b35be2c735b37dd88e079d460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if 'a' lies strictly to left of 'b' (in orientation) w.r.t pivot.  <a href="#aff60053b35be2c735b37dd88e079d460">More...</a><br /></td></tr>
 <tr class="separator:aff60053b35be2c735b37dd88e079d460"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,41 +167,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a25068b534491cef265e5d7c038f82e7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25068b534491cef265e5d7c038f82e7d">&#9670;&nbsp;</a></span>getLeftTangentPoint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classPoint.html">Point</a> GrahamScan::getLeftTangentPoint </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
-          <td class="paramname"><em>pivot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the Left Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pivot</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classPoint.html">Point</a> on the convex hull lying on the right tangent </dd></dl>
-
-</div>
-</div>
 <a id="a79b1642bc347f2f6e517b2f3415e871d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79b1642bc347f2f6e517b2f3415e871d">&#9670;&nbsp;</a></span>getPoint()</h2>
 
@@ -241,9 +207,6 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classPoint.html">Point</a> GrahamScan::getRightTangentPoint </td>
@@ -253,11 +216,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the Right Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference. </p>
@@ -268,33 +226,6 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classPoint.html">Point</a> on the convex hull lying on the right tangent </dd></dl>
-
-</div>
-</div>
-<a id="ae308d2013337902df55fa4feae2aec60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae308d2013337902df55fa4feae2aec60">&#9670;&nbsp;</a></span>getTangentPoints()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pair&lt; <a class="el" href="classPoint.html">Point</a>, <a class="el" href="classPoint.html">Point</a> &gt; GrahamScan::getTangentPoints </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
-          <td class="paramname"><em>pivot</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the Tangent Points using binary search in O(log(numPoints)) </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pivot</td><td>Pivot from where tangents are drawn </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>pair&lt;Point, Point&gt; The two tangent points on the Convex Hull </dd></dl>
 
 </div>
 </div>

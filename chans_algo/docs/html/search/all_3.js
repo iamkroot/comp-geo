@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['jarvisstep',['JarvisStep',['../classJarvisStep.html',1,'JarvisStep'],['../classJarvisStep.html#afe702ba01d8077f819b82fa698d3a835',1,'JarvisStep::JarvisStep()']]],
-  ['jarvisstep_2ecpp',['JarvisStep.cpp',['../JarvisStep_8cpp.html',1,'']]],
-  ['jarvisstep_2ehpp',['JarvisStep.hpp',['../JarvisStep_8hpp.html',1,'']]]
+  ['inf',['INF',['../classUtils.html#ade3d4413a974dbaa25f1619a4516946b',1,'Utils']]],
+  ['insert',['insert',['../classGrahamScan.html#a4996cb0d2deb3cd6f9cb3df99b91e7e8',1,'GrahamScan']]],
+  ['isabove',['isAbove',['../classGrahamScan.html#ab860e33708a7cf494b0708c49a303c0c',1,'GrahamScan']]],
+  ['isbelow',['isBelow',['../classGrahamScan.html#aff60053b35be2c735b37dd88e079d460',1,'GrahamScan']]]
 ];
