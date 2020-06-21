@@ -1,6 +1,7 @@
 #pragma once
 #include <bits/stdc++.h>
 #include "Point.hpp"
+#include "JarvisStep.hpp"
 
 using namespace std;
 
@@ -28,24 +29,6 @@ class GrahamScan
      * @brief Counter clockwiser order of points in the convex hull
      */
     vector<Point> convexHull;
-
-    /**
-     * @brief Get the Right Tangent Point, using binary search on the convex hull
-     * from the pivot as reference
-     * 
-     * @param pivot 
-     * @return Point on the convex hull lying on the right tangent
-     */
-    Point getRightTangentPoint(Point pivot);
-
-    /**
-     * @brief Get the Left Tangent Point, using binary search on the convex hull
-     * from the pivot as reference
-     * 
-     * @param pivot 
-     * @return Point on the convex hull lying on the right tangent
-     */
-    Point getLeftTangentPoint(Point pivot);
 
     /**
      * @brief Determine if 'a' lies strictly to left of 'b' (in orientation) w.r.t pivot
@@ -82,8 +65,33 @@ class GrahamScan
      */
     Point getPoint(int idx);
 
-public:
+    /**
+     * @brief Compare ordering of points for graham's scan
+     */
+    class Comparator
+    {
+        Point pivot;
 
+    public:
+
+        Comparator(Point pivot)
+        {
+            this->pivot = pivot;
+        }
+
+        bool operator()(Point &p1, Point &p2)
+        {
+            int o = Point::orient(pivot, p1, p2);
+            if (o == 1)
+                return 1;
+            else if (o == -1)
+                return 0;
+            else
+                return p1 < p2;
+        }
+    };
+
+public:
     /**
      * @brief Construct a new Graham Scan object
      * 
@@ -97,10 +105,11 @@ public:
     vector<Point> getConvexHull();
 
     /**
-     * @brief Get the Tangent Points using binary search in O(log(numPoints))
+     * @brief Get the Right Tangent Point, using binary search on the convex hull
+     * from the pivot as reference
      * 
-     * @param pivot Pivot from where tangents are drawn
-     * @return pair<Point, Point> The two tangent points on the Convex Hull
+     * @param pivot 
+     * @return Point on the convex hull lying on the right tangent
      */
-    pair<Point, Point> getTangentPoints(Point pivot);
+    Point getRightTangentPoint(Point pivot);
 };
