@@ -2,12 +2,27 @@ CXX = g++
 INC_DIR = ./include
 SRC_DIR = ./src
 BUILD_DIR = ./build
-CXXFLAGS = -c -Wall -O3 -I$(INC_DIR)
+CXXFLAGS = -Wall -O3 -I$(INC_DIR)
 INCLUDES = $(INC_DIR)/*.hpp
-BUILD = $(BUILD_DIR)/*.o
+# All source files
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+# All corresponding object files
+BUILD = $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 
-chan: $(BUILD)
-	$(CXX) $(BUILD) -o main_chan
+chan: $(BUILD) main.cpp
+	$(CXX) $(CXXFLAGS) $^ -o main_chan
 
-build/%.o: $(SRC_DIR)/%.cpp $(INCLUDES)
-	$(CXX) $(CXXFLAGS) $< -o $@
+test: $(BUILD) ./tests/tester.cpp
+	$(CXX) $(CXXFLAGS) $^ -o test
+
+bs_test: $(BUILD) ./tests/bs_tester.cpp
+	$(CXX) $(CXXFLAGS) $^ -o bs_test
+
+# Build all source files into corresponding object files
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(INCLUDES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
+
+## Notes:
+# '$<' : first requirement file
+# '$^' : all requirement files
+# '$@' : target file

@@ -37,11 +37,8 @@ bool Chan::restrictedConvexHull(int guessedHullSize)
         hull.push_back(currPivot);
         vector<Point> candidatePoints;
         for (GrahamScan &grahamScan : grahamScans)
-        {
-            pair<Point, Point> tangentPoints = grahamScan.getTangentPoints(currPivot);
-            candidatePoints.push_back(tangentPoints.first);
-            candidatePoints.push_back(tangentPoints.second);
-        }
+            candidatePoints.push_back(grahamScan.getRightTangentPoint(currPivot));
+        
         // Perform jarvis step
         currPivot = JarvisStep(currPivot, candidatePoints).getNext();
         if (currPivot == pivot)
