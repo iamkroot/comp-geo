@@ -2,17 +2,18 @@
 #include "GrahamScan.hpp"
 #include "JarvisStep.hpp"
 
+template <class T>
 class Chan
 {
     /**
      * @brief Input points for computing convex hull
      */
-    vector<Point> points;
+    vector<Point<T>> points;
 
     /**
      * @brief Set of points in the convex hull in counter clockwise order
      */
-    vector<Point> convexHull;
+    vector<Point<T>> convexHull;
 
     /**
      * @brief Number of points in the input
@@ -27,7 +28,7 @@ class Chan
     /**
      * @brief Pivot point in input points
      */
-    Point pivot;
+    Point<T> pivot;
 
     /**
      * @brief Tries to compute convex hull using given partition size (guessed size of hull)
@@ -42,9 +43,9 @@ class Chan
      * @brief Divide input points equally into partitions of size 'partitionSize'
      * 
      * @param partitionSize 
-     * @return vector<vector<Point>> Partitions
+     * @return vector<vector<Point<T>>> Partitions
      */
-    vector<vector<Point>> computePartitions(int partitionSize);
+    vector<vector<Point<T>>> computePartitions(int partitionSize);
 
 public:
     /**
@@ -52,12 +53,12 @@ public:
      * 
      * @param points Set of input points
      */
-    Chan(vector<Point> points);
+    Chan(vector<Point<T>> points);
 
     /**
      * @brief Get convex hull computed using Chan's algorithm
      * 
-     * @return vector<Point> Set of points int convex hull in counter clockwise order
+     * @return vector<Point<T>> Set of points int convex hull in counter clockwise order
      */
-    vector<Point> getConvexHull();
+    vector<Point<T>> getConvexHull();
 };

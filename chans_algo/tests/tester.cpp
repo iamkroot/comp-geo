@@ -25,19 +25,19 @@ int main(int argc, char **argv)
             int y = rand() % maxa * (rand() % 2 ? 1 : -1);
             data.insert({x, y});
         }
-        vector<Point> points;
+        vector<Point<int>> points;
         ofstream datafile;
         datafile.open("./tests/data.txt");
         datafile << data.size() << "\n";
         for (auto point : data)
         {
-            points.push_back(Point(point.first, point.second));
+            points.push_back(Point<int>(point.first, point.second));
             datafile << point.first << " " << point.second << "\n";
         }
         datafile << endl;
         datafile.close();
-        vector<Point> convexHullGrahamScan = GrahamScan(points).getConvexHull();
-        vector<Point> convexHullChan = Chan(points).getConvexHull();
+        vector<Point<int>> convexHullGrahamScan = GrahamScan<int>(points).getConvexHull();
+        vector<Point<int>> convexHullChan = Chan<int>(points).getConvexHull();
         sort(convexHullGrahamScan.begin(), convexHullGrahamScan.end());
         sort(convexHullChan.begin(), convexHullChan.end());
         bool pass = true;

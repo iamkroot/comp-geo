@@ -1,6 +1,7 @@
 #pragma once
 #include <bits/stdc++.h>
 
+template <class T>
 class Utils
 {
     /**
@@ -11,17 +12,12 @@ class Utils
 
 public:
     /**
-     * @brief Define Infinity
-     */
-    static const int INF = 1e9;
-
-    /**
      * @brief Utility to compute square
      * 
      * @param x 
-     * @return int 
+     * @return T 
      */
-    static int square(int x)
+    static T square(T x)
     {
         return x * x;
     }

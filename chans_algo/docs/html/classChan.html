@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Chan Class Reference</title>
+<title>My Project: Chan&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classChan-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Chan Class Reference</div>  </div>
+<div class="title">Chan&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -75,51 +75,53 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b17366e6548967ea27702d9ae37f394"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a0b17366e6548967ea27702d9ae37f394">Chan</a> (vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; <a class="el" href="classChan.html#a3c867cd91392509f20644fc59d73778c">points</a>)</td></tr>
-<tr class="memdesc:a0b17366e6548967ea27702d9ae37f394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classChan.html">Chan</a> object.  <a href="#a0b17366e6548967ea27702d9ae37f394">More...</a><br /></td></tr>
-<tr class="separator:a0b17366e6548967ea27702d9ae37f394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1382d15aa44de4e9182f2cc74cbf1dea"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a1382d15aa44de4e9182f2cc74cbf1dea">getConvexHull</a> ()</td></tr>
-<tr class="memdesc:a1382d15aa44de4e9182f2cc74cbf1dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get convex hull computed using <a class="el" href="classChan.html">Chan</a>'s algorithm.  <a href="#a1382d15aa44de4e9182f2cc74cbf1dea">More...</a><br /></td></tr>
-<tr class="separator:a1382d15aa44de4e9182f2cc74cbf1dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5b684c05344e32e6ec76d781b676634"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#ac5b684c05344e32e6ec76d781b676634">Chan</a> (vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt;&gt; <a class="el" href="classChan.html#a492d7e3f31f1fd1e06f5ff464eec0492">points</a>)</td></tr>
+<tr class="memdesc:ac5b684c05344e32e6ec76d781b676634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classChan.html">Chan</a> object.  <a href="#ac5b684c05344e32e6ec76d781b676634">More...</a><br /></td></tr>
+<tr class="separator:ac5b684c05344e32e6ec76d781b676634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfcc1c908e1b4fde9bddb33d1af6d65"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a3cfcc1c908e1b4fde9bddb33d1af6d65">getConvexHull</a> ()</td></tr>
+<tr class="memdesc:a3cfcc1c908e1b4fde9bddb33d1af6d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get convex hull computed using <a class="el" href="classChan.html">Chan</a>'s algorithm.  <a href="#a3cfcc1c908e1b4fde9bddb33d1af6d65">More...</a><br /></td></tr>
+<tr class="separator:a3cfcc1c908e1b4fde9bddb33d1af6d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a3a7eb4017718654b6f7f13daaef90534"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a3a7eb4017718654b6f7f13daaef90534">restrictedConvexHull</a> (int guessedHullSize)</td></tr>
-<tr class="memdesc:a3a7eb4017718654b6f7f13daaef90534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to compute convex hull using given partition size (guessed size of hull)  <a href="#a3a7eb4017718654b6f7f13daaef90534">More...</a><br /></td></tr>
-<tr class="separator:a3a7eb4017718654b6f7f13daaef90534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767dbe606a11c923d4effd7250529900"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a767dbe606a11c923d4effd7250529900">computePartitions</a> (int partitionSize)</td></tr>
-<tr class="memdesc:a767dbe606a11c923d4effd7250529900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide input points equally into partitions of size 'partitionSize'.  <a href="#a767dbe606a11c923d4effd7250529900">More...</a><br /></td></tr>
-<tr class="separator:a767dbe606a11c923d4effd7250529900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773b2ebe27132ccfacedd5efebd63093"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a773b2ebe27132ccfacedd5efebd63093">restrictedConvexHull</a> (int guessedHullSize)</td></tr>
+<tr class="memdesc:a773b2ebe27132ccfacedd5efebd63093"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to compute convex hull using given partition size (guessed size of hull)  <a href="#a773b2ebe27132ccfacedd5efebd63093">More...</a><br /></td></tr>
+<tr class="separator:a773b2ebe27132ccfacedd5efebd63093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c42d1c1eab98ab7fb9a3a851f51f305"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a6c42d1c1eab98ab7fb9a3a851f51f305">computePartitions</a> (int partitionSize)</td></tr>
+<tr class="memdesc:a6c42d1c1eab98ab7fb9a3a851f51f305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide input points equally into partitions of size 'partitionSize'.  <a href="#a6c42d1c1eab98ab7fb9a3a851f51f305">More...</a><br /></td></tr>
+<tr class="separator:a6c42d1c1eab98ab7fb9a3a851f51f305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a3c867cd91392509f20644fc59d73778c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a3c867cd91392509f20644fc59d73778c">points</a></td></tr>
-<tr class="memdesc:a3c867cd91392509f20644fc59d73778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input points for computing convex hull.  <a href="#a3c867cd91392509f20644fc59d73778c">More...</a><br /></td></tr>
-<tr class="separator:a3c867cd91392509f20644fc59d73778c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983333f17209e944e2218f83c6db04a8"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a983333f17209e944e2218f83c6db04a8">convexHull</a></td></tr>
-<tr class="memdesc:a983333f17209e944e2218f83c6db04a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of points in the convex hull in counter clockwise order.  <a href="#a983333f17209e944e2218f83c6db04a8">More...</a><br /></td></tr>
-<tr class="separator:a983333f17209e944e2218f83c6db04a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f906daeea67573ca4fc09da32d2395f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a9f906daeea67573ca4fc09da32d2395f">numPoints</a></td></tr>
-<tr class="memdesc:a9f906daeea67573ca4fc09da32d2395f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in the input.  <a href="#a9f906daeea67573ca4fc09da32d2395f">More...</a><br /></td></tr>
-<tr class="separator:a9f906daeea67573ca4fc09da32d2395f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae77990baa3fc9811d17fed02e4b73d70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#ae77990baa3fc9811d17fed02e4b73d70">convexHullSize</a></td></tr>
-<tr class="memdesc:ae77990baa3fc9811d17fed02e4b73d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convex Hull size.  <a href="#ae77990baa3fc9811d17fed02e4b73d70">More...</a><br /></td></tr>
-<tr class="separator:ae77990baa3fc9811d17fed02e4b73d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50d101e7ce6ac726592d8dc2f341cade"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a50d101e7ce6ac726592d8dc2f341cade">pivot</a></td></tr>
-<tr class="memdesc:a50d101e7ce6ac726592d8dc2f341cade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pivot point in input points.  <a href="#a50d101e7ce6ac726592d8dc2f341cade">More...</a><br /></td></tr>
-<tr class="separator:a50d101e7ce6ac726592d8dc2f341cade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492d7e3f31f1fd1e06f5ff464eec0492"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a492d7e3f31f1fd1e06f5ff464eec0492">points</a></td></tr>
+<tr class="memdesc:a492d7e3f31f1fd1e06f5ff464eec0492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input points for computing convex hull.  <a href="#a492d7e3f31f1fd1e06f5ff464eec0492">More...</a><br /></td></tr>
+<tr class="separator:a492d7e3f31f1fd1e06f5ff464eec0492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b189fb8de493f51a989f5c90dc7bbcc"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a6b189fb8de493f51a989f5c90dc7bbcc">convexHull</a></td></tr>
+<tr class="memdesc:a6b189fb8de493f51a989f5c90dc7bbcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of points in the convex hull in counter clockwise order.  <a href="#a6b189fb8de493f51a989f5c90dc7bbcc">More...</a><br /></td></tr>
+<tr class="separator:a6b189fb8de493f51a989f5c90dc7bbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5d5339db322fa4a378af0832b31da9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a9f5d5339db322fa4a378af0832b31da9">numPoints</a></td></tr>
+<tr class="memdesc:a9f5d5339db322fa4a378af0832b31da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in the input.  <a href="#a9f5d5339db322fa4a378af0832b31da9">More...</a><br /></td></tr>
+<tr class="separator:a9f5d5339db322fa4a378af0832b31da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f3dd178f14b5e146e6a80aea8e039"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a366f3dd178f14b5e146e6a80aea8e039">convexHullSize</a></td></tr>
+<tr class="memdesc:a366f3dd178f14b5e146e6a80aea8e039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convex Hull size.  <a href="#a366f3dd178f14b5e146e6a80aea8e039">More...</a><br /></td></tr>
+<tr class="separator:a366f3dd178f14b5e146e6a80aea8e039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601408ef7e50863dd345e86e519710bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChan.html#a601408ef7e50863dd345e86e519710bc">pivot</a></td></tr>
+<tr class="memdesc:a601408ef7e50863dd345e86e519710bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pivot point in input points.  <a href="#a601408ef7e50863dd345e86e519710bc">More...</a><br /></td></tr>
+<tr class="separator:a601408ef7e50863dd345e86e519710bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0b17366e6548967ea27702d9ae37f394"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b17366e6548967ea27702d9ae37f394">&#9670;&nbsp;</a></span>Chan()</h2>
+<a id="ac5b684c05344e32e6ec76d781b676634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5b684c05344e32e6ec76d781b676634">&#9670;&nbsp;</a></span>Chan()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Chan::Chan </td>
+          <td class="memname"><a class="el" href="classChan.html">Chan</a>&lt; T &gt;::<a class="el" href="classChan.html">Chan</a> </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt;&gt;&#160;</td>
           <td class="paramname"><em>points</em></td><td>)</td>
           <td></td>
         </tr>
@@ -137,17 +139,19 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a767dbe606a11c923d4effd7250529900"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a767dbe606a11c923d4effd7250529900">&#9670;&nbsp;</a></span>computePartitions()</h2>
+<a id="a6c42d1c1eab98ab7fb9a3a851f51f305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c42d1c1eab98ab7fb9a3a851f51f305">&#9670;&nbsp;</a></span>computePartitions()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &gt; Chan::computePartitions </td>
+          <td class="memname">vector&lt; vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt; &gt; <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::computePartitions </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>partitionSize</em></td><td>)</td>
@@ -168,18 +172,20 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;vector&lt;Point&gt;&gt; Partitions </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;vector&lt;Point&lt;T&gt;&gt;&gt; Partitions </dd></dl>
 
 </div>
 </div>
-<a id="a1382d15aa44de4e9182f2cc74cbf1dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1382d15aa44de4e9182f2cc74cbf1dea">&#9670;&nbsp;</a></span>getConvexHull()</h2>
+<a id="a3cfcc1c908e1b4fde9bddb33d1af6d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfcc1c908e1b4fde9bddb33d1af6d65">&#9670;&nbsp;</a></span>getConvexHull()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; Chan::getConvexHull </td>
+          <td class="memname">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt; <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::getConvexHull </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -188,21 +194,23 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get convex hull computed using <a class="el" href="classChan.html">Chan</a>'s algorithm. </p>
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;Point&gt; Set of points int convex hull in counter clockwise order </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;Point&lt;T&gt;&gt; Set of points int convex hull in counter clockwise order </dd></dl>
 
 </div>
 </div>
-<a id="a3a7eb4017718654b6f7f13daaef90534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a7eb4017718654b6f7f13daaef90534">&#9670;&nbsp;</a></span>restrictedConvexHull()</h2>
+<a id="a773b2ebe27132ccfacedd5efebd63093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773b2ebe27132ccfacedd5efebd63093">&#9670;&nbsp;</a></span>restrictedConvexHull()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Chan::restrictedConvexHull </td>
+          <td class="memname">bool <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::restrictedConvexHull </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>guessedHullSize</em></td><td>)</td>
@@ -230,17 +238,19 @@ false If algorithm fails to complete </dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a983333f17209e944e2218f83c6db04a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a983333f17209e944e2218f83c6db04a8">&#9670;&nbsp;</a></span>convexHull</h2>
+<a id="a6b189fb8de493f51a989f5c90dc7bbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b189fb8de493f51a989f5c90dc7bbcc">&#9670;&nbsp;</a></span>convexHull</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&gt; Chan::convexHull</td>
+          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&lt;T&gt; &gt; <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::convexHull</td>
         </tr>
       </table>
   </td>
@@ -254,17 +264,19 @@ false If algorithm fails to complete </dd></dl>
 
 </div>
 </div>
-<a id="ae77990baa3fc9811d17fed02e4b73d70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae77990baa3fc9811d17fed02e4b73d70">&#9670;&nbsp;</a></span>convexHullSize</h2>
+<a id="a366f3dd178f14b5e146e6a80aea8e039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366f3dd178f14b5e146e6a80aea8e039">&#9670;&nbsp;</a></span>convexHullSize</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Chan::convexHullSize</td>
+          <td class="memname">int <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::convexHullSize</td>
         </tr>
       </table>
   </td>
@@ -278,17 +290,19 @@ false If algorithm fails to complete </dd></dl>
 
 </div>
 </div>
-<a id="a9f906daeea67573ca4fc09da32d2395f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f906daeea67573ca4fc09da32d2395f">&#9670;&nbsp;</a></span>numPoints</h2>
+<a id="a9f5d5339db322fa4a378af0832b31da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5d5339db322fa4a378af0832b31da9">&#9670;&nbsp;</a></span>numPoints</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Chan::numPoints</td>
+          <td class="memname">int <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::numPoints</td>
         </tr>
       </table>
   </td>
@@ -302,17 +316,19 @@ false If algorithm fails to complete </dd></dl>
 
 </div>
 </div>
-<a id="a50d101e7ce6ac726592d8dc2f341cade"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50d101e7ce6ac726592d8dc2f341cade">&#9670;&nbsp;</a></span>pivot</h2>
+<a id="a601408ef7e50863dd345e86e519710bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601408ef7e50863dd345e86e519710bc">&#9670;&nbsp;</a></span>pivot</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPoint.html">Point</a> Chan::pivot</td>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a>&lt;T&gt; <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::pivot</td>
         </tr>
       </table>
   </td>
@@ -326,17 +342,19 @@ false If algorithm fails to complete </dd></dl>
 
 </div>
 </div>
-<a id="a3c867cd91392509f20644fc59d73778c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c867cd91392509f20644fc59d73778c">&#9670;&nbsp;</a></span>points</h2>
+<a id="a492d7e3f31f1fd1e06f5ff464eec0492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492d7e3f31f1fd1e06f5ff464eec0492">&#9670;&nbsp;</a></span>points</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&gt; Chan::points</td>
+          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&lt;T&gt; &gt; <a class="el" href="classChan.html">Chan</a>&lt; T &gt;::points</td>
         </tr>
       </table>
   </td>

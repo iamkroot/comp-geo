@@ -1,5 +1,5 @@
-\hypertarget{classChan}{}\section{Chan Class Reference}
-\label{classChan}\index{Chan@{Chan}}
+\hypertarget{classChan}{}\section{Chan$<$ T $>$ Class Template Reference}
+\label{classChan}\index{Chan$<$ T $>$@{Chan$<$ T $>$}}
 
 
 {\ttfamily \#include $<$Chan.\+hpp$>$}
@@ -7,38 +7,39 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classChan_a0b17366e6548967ea27702d9ae37f394}{Chan}} (vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a3c867cd91392509f20644fc59d73778c}{points}})
+\mbox{\hyperlink{classChan_ac5b684c05344e32e6ec76d781b676634}{Chan}} (vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$$>$ \mbox{\hyperlink{classChan_a492d7e3f31f1fd1e06f5ff464eec0492}{points}})
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classChan}{Chan}} object. \end{DoxyCompactList}\item 
-vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}{get\+Convex\+Hull}} ()
+vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{classChan_a3cfcc1c908e1b4fde9bddb33d1af6d65}{get\+Convex\+Hull}} ()
 \begin{DoxyCompactList}\small\item\em Get convex hull computed using \mbox{\hyperlink{classChan}{Chan}}\textquotesingle{}s algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classChan_a3a7eb4017718654b6f7f13daaef90534}{restricted\+Convex\+Hull}} (int guessed\+Hull\+Size)
+bool \mbox{\hyperlink{classChan_a773b2ebe27132ccfacedd5efebd63093}{restricted\+Convex\+Hull}} (int guessed\+Hull\+Size)
 \begin{DoxyCompactList}\small\item\em Tries to compute convex hull using given partition size (guessed size of hull) \end{DoxyCompactList}\item 
-vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ $>$ \mbox{\hyperlink{classChan_a767dbe606a11c923d4effd7250529900}{compute\+Partitions}} (int partition\+Size)
+vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ $>$ \mbox{\hyperlink{classChan_a6c42d1c1eab98ab7fb9a3a851f51f305}{compute\+Partitions}} (int partition\+Size)
 \begin{DoxyCompactList}\small\item\em Divide input points equally into partitions of size \textquotesingle{}partition\+Size\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a3c867cd91392509f20644fc59d73778c}{points}}
+vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{classChan_a492d7e3f31f1fd1e06f5ff464eec0492}{points}}
 \begin{DoxyCompactList}\small\item\em Input points for computing convex hull. \end{DoxyCompactList}\item 
-vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a983333f17209e944e2218f83c6db04a8}{convex\+Hull}}
+vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{classChan_a6b189fb8de493f51a989f5c90dc7bbcc}{convex\+Hull}}
 \begin{DoxyCompactList}\small\item\em Set of points in the convex hull in counter clockwise order. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classChan_a9f906daeea67573ca4fc09da32d2395f}{num\+Points}}
+int \mbox{\hyperlink{classChan_a9f5d5339db322fa4a378af0832b31da9}{num\+Points}}
 \begin{DoxyCompactList}\small\item\em Number of points in the input. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classChan_ae77990baa3fc9811d17fed02e4b73d70}{convex\+Hull\+Size}}
+int \mbox{\hyperlink{classChan_a366f3dd178f14b5e146e6a80aea8e039}{convex\+Hull\+Size}}
 \begin{DoxyCompactList}\small\item\em Convex Hull size. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classChan_a50d101e7ce6ac726592d8dc2f341cade}{pivot}}
+\mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ \mbox{\hyperlink{classChan_a601408ef7e50863dd345e86e519710bc}{pivot}}
 \begin{DoxyCompactList}\small\item\em Pivot point in input points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classChan_a0b17366e6548967ea27702d9ae37f394}\label{classChan_a0b17366e6548967ea27702d9ae37f394}} 
+\mbox{\Hypertarget{classChan_ac5b684c05344e32e6ec76d781b676634}\label{classChan_ac5b684c05344e32e6ec76d781b676634}} 
 \index{Chan@{Chan}!Chan@{Chan}}
 \index{Chan@{Chan}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{Chan()}{Chan()}}
-{\footnotesize\ttfamily Chan\+::\+Chan (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$}]{points }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::\mbox{\hyperlink{classChan}{Chan}} (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$$>$}]{points }\end{DoxyParamCaption})}
 
 
 
@@ -52,11 +53,12 @@ Construct a new \mbox{\hyperlink{classChan}{Chan}} object.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classChan_a767dbe606a11c923d4effd7250529900}\label{classChan_a767dbe606a11c923d4effd7250529900}} 
+\mbox{\Hypertarget{classChan_a6c42d1c1eab98ab7fb9a3a851f51f305}\label{classChan_a6c42d1c1eab98ab7fb9a3a851f51f305}} 
 \index{Chan@{Chan}!compute\+Partitions@{compute\+Partitions}}
 \index{compute\+Partitions@{compute\+Partitions}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{compute\+Partitions()}{computePartitions()}}
-{\footnotesize\ttfamily vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ $>$ Chan\+::compute\+Partitions (\begin{DoxyParamCaption}\item[{int}]{partition\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ $>$ \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::compute\+Partitions (\begin{DoxyParamCaption}\item[{int}]{partition\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -68,26 +70,28 @@ Divide input points equally into partitions of size \textquotesingle{}partition\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector$<$vector$<$\+Point$>$$>$ Partitions 
+vector$<$vector$<$Point$<$\+T$>$$>$$>$ Partitions 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}\label{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}} 
+\mbox{\Hypertarget{classChan_a3cfcc1c908e1b4fde9bddb33d1af6d65}\label{classChan_a3cfcc1c908e1b4fde9bddb33d1af6d65}} 
 \index{Chan@{Chan}!get\+Convex\+Hull@{get\+Convex\+Hull}}
 \index{get\+Convex\+Hull@{get\+Convex\+Hull}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{get\+Convex\+Hull()}{getConvexHull()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ Chan\+::get\+Convex\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ \mbox{\hyperlink{classPoint}{Point}}$<$ T $>$ $>$ \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::get\+Convex\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Get convex hull computed using \mbox{\hyperlink{classChan}{Chan}}\textquotesingle{}s algorithm. 
 
 \begin{DoxyReturn}{Returns}
-vector$<$\+Point$>$ Set of points int convex hull in counter clockwise order 
+vector$<$Point$<$\+T$>$$>$ Set of points int convex hull in counter clockwise order 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classChan_a3a7eb4017718654b6f7f13daaef90534}\label{classChan_a3a7eb4017718654b6f7f13daaef90534}} 
+\mbox{\Hypertarget{classChan_a773b2ebe27132ccfacedd5efebd63093}\label{classChan_a773b2ebe27132ccfacedd5efebd63093}} 
 \index{Chan@{Chan}!restricted\+Convex\+Hull@{restricted\+Convex\+Hull}}
 \index{restricted\+Convex\+Hull@{restricted\+Convex\+Hull}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{restricted\+Convex\+Hull()}{restrictedConvexHull()}}
-{\footnotesize\ttfamily bool Chan\+::restricted\+Convex\+Hull (\begin{DoxyParamCaption}\item[{int}]{guessed\+Hull\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::restricted\+Convex\+Hull (\begin{DoxyParamCaption}\item[{int}]{guessed\+Hull\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -106,51 +110,56 @@ false If algorithm fails to complete
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classChan_a983333f17209e944e2218f83c6db04a8}\label{classChan_a983333f17209e944e2218f83c6db04a8}} 
+\mbox{\Hypertarget{classChan_a6b189fb8de493f51a989f5c90dc7bbcc}\label{classChan_a6b189fb8de493f51a989f5c90dc7bbcc}} 
 \index{Chan@{Chan}!convex\+Hull@{convex\+Hull}}
 \index{convex\+Hull@{convex\+Hull}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{convex\+Hull}{convexHull}}
-{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPoint}{Point}}$>$ Chan\+::convex\+Hull\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$\mbox{\hyperlink{classPoint}{Point}}$<$T$>$ $>$ \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::convex\+Hull\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Set of points in the convex hull in counter clockwise order. 
 
-\mbox{\Hypertarget{classChan_ae77990baa3fc9811d17fed02e4b73d70}\label{classChan_ae77990baa3fc9811d17fed02e4b73d70}} 
+\mbox{\Hypertarget{classChan_a366f3dd178f14b5e146e6a80aea8e039}\label{classChan_a366f3dd178f14b5e146e6a80aea8e039}} 
 \index{Chan@{Chan}!convex\+Hull\+Size@{convex\+Hull\+Size}}
 \index{convex\+Hull\+Size@{convex\+Hull\+Size}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{convex\+Hull\+Size}{convexHullSize}}
-{\footnotesize\ttfamily int Chan\+::convex\+Hull\+Size\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::convex\+Hull\+Size\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Convex Hull size. 
 
-\mbox{\Hypertarget{classChan_a9f906daeea67573ca4fc09da32d2395f}\label{classChan_a9f906daeea67573ca4fc09da32d2395f}} 
+\mbox{\Hypertarget{classChan_a9f5d5339db322fa4a378af0832b31da9}\label{classChan_a9f5d5339db322fa4a378af0832b31da9}} 
 \index{Chan@{Chan}!num\+Points@{num\+Points}}
 \index{num\+Points@{num\+Points}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{num\+Points}{numPoints}}
-{\footnotesize\ttfamily int Chan\+::num\+Points\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::num\+Points\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Number of points in the input. 
 
-\mbox{\Hypertarget{classChan_a50d101e7ce6ac726592d8dc2f341cade}\label{classChan_a50d101e7ce6ac726592d8dc2f341cade}} 
+\mbox{\Hypertarget{classChan_a601408ef7e50863dd345e86e519710bc}\label{classChan_a601408ef7e50863dd345e86e519710bc}} 
 \index{Chan@{Chan}!pivot@{pivot}}
 \index{pivot@{pivot}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{pivot}{pivot}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Chan\+::pivot\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classPoint}{Point}}$<$T$>$ \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::pivot\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Pivot point in input points. 
 
-\mbox{\Hypertarget{classChan_a3c867cd91392509f20644fc59d73778c}\label{classChan_a3c867cd91392509f20644fc59d73778c}} 
+\mbox{\Hypertarget{classChan_a492d7e3f31f1fd1e06f5ff464eec0492}\label{classChan_a492d7e3f31f1fd1e06f5ff464eec0492}} 
 \index{Chan@{Chan}!points@{points}}
 \index{points@{points}!Chan@{Chan}}
 \subsubsection{\texorpdfstring{points}{points}}
-{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPoint}{Point}}$>$ Chan\+::points\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$\mbox{\hyperlink{classPoint}{Point}}$<$T$>$ $>$ \mbox{\hyperlink{classChan}{Chan}}$<$ T $>$\+::points\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: GrahamScan Class Reference</title>
+<title>My Project: GrahamScan&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classGrahamScan-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GrahamScan Class Reference</div>  </div>
+<div class="title">GrahamScan&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -82,56 +82,58 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa774467ce21242d7ef7ffbd1680a6d61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#aa774467ce21242d7ef7ffbd1680a6d61">GrahamScan</a> (vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &amp;points)</td></tr>
-<tr class="memdesc:aa774467ce21242d7ef7ffbd1680a6d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Graham Scan object.  <a href="#aa774467ce21242d7ef7ffbd1680a6d61">More...</a><br /></td></tr>
-<tr class="separator:aa774467ce21242d7ef7ffbd1680a6d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a374db012cb6a96fcb8530d07cddd498e"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a374db012cb6a96fcb8530d07cddd498e">getConvexHull</a> ()</td></tr>
-<tr class="separator:a374db012cb6a96fcb8530d07cddd498e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae01e3fe104346f991f951a6843a15893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ae01e3fe104346f991f951a6843a15893">getRightTangentPoint</a> (<a class="el" href="classPoint.html">Point</a> pivot)</td></tr>
-<tr class="memdesc:ae01e3fe104346f991f951a6843a15893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Right Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference.  <a href="#ae01e3fe104346f991f951a6843a15893">More...</a><br /></td></tr>
-<tr class="separator:ae01e3fe104346f991f951a6843a15893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af518504ce673b75e7bef7a0de90e7699"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#af518504ce673b75e7bef7a0de90e7699">GrahamScan</a> (vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt;&gt; &amp;points)</td></tr>
+<tr class="memdesc:af518504ce673b75e7bef7a0de90e7699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Graham Scan object.  <a href="#af518504ce673b75e7bef7a0de90e7699">More...</a><br /></td></tr>
+<tr class="separator:af518504ce673b75e7bef7a0de90e7699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0731f364efdbbb6028a38c623e99766d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a0731f364efdbbb6028a38c623e99766d">getConvexHull</a> ()</td></tr>
+<tr class="separator:a0731f364efdbbb6028a38c623e99766d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47ec86625b2f4f32752c92ef29fbcbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#af47ec86625b2f4f32752c92ef29fbcbd">getRightTangentPoint</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; pivot)</td></tr>
+<tr class="memdesc:af47ec86625b2f4f32752c92ef29fbcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Right Tangent <a class="el" href="classPoint.html">Point</a>, using binary search on the convex hull from the pivot as reference.  <a href="#af47ec86625b2f4f32752c92ef29fbcbd">More...</a><br /></td></tr>
+<tr class="separator:af47ec86625b2f4f32752c92ef29fbcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a4996cb0d2deb3cd6f9cb3df99b91e7e8">insert</a> (<a class="el" href="classPoint.html">Point</a> &amp;p)</td></tr>
-<tr class="memdesc:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new point into the stack of partially constructed convex hull.  <a href="#a4996cb0d2deb3cd6f9cb3df99b91e7e8">More...</a><br /></td></tr>
-<tr class="separator:a4996cb0d2deb3cd6f9cb3df99b91e7e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff60053b35be2c735b37dd88e079d460"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#aff60053b35be2c735b37dd88e079d460">isBelow</a> (<a class="el" href="classPoint.html">Point</a> pivot, <a class="el" href="classPoint.html">Point</a> a, <a class="el" href="classPoint.html">Point</a> b)</td></tr>
-<tr class="memdesc:aff60053b35be2c735b37dd88e079d460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if 'a' lies strictly to left of 'b' (in orientation) w.r.t pivot.  <a href="#aff60053b35be2c735b37dd88e079d460">More...</a><br /></td></tr>
-<tr class="separator:aff60053b35be2c735b37dd88e079d460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab860e33708a7cf494b0708c49a303c0c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ab860e33708a7cf494b0708c49a303c0c">isAbove</a> (<a class="el" href="classPoint.html">Point</a> pivot, <a class="el" href="classPoint.html">Point</a> a, <a class="el" href="classPoint.html">Point</a> b)</td></tr>
-<tr class="memdesc:ab860e33708a7cf494b0708c49a303c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a lies strictly to right of b (in orientation) w.r.t pivot.  <a href="#ab860e33708a7cf494b0708c49a303c0c">More...</a><br /></td></tr>
-<tr class="separator:ab860e33708a7cf494b0708c49a303c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b1642bc347f2f6e517b2f3415e871d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a79b1642bc347f2f6e517b2f3415e871d">getPoint</a> (int idx)</td></tr>
-<tr class="memdesc:a79b1642bc347f2f6e517b2f3415e871d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classPoint.html">Point</a> from convex hull at position 'idx'.  <a href="#a79b1642bc347f2f6e517b2f3415e871d">More...</a><br /></td></tr>
-<tr class="separator:a79b1642bc347f2f6e517b2f3415e871d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942f7d7c58a6992600b6adda70e5e14d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a942f7d7c58a6992600b6adda70e5e14d">insert</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;p)</td></tr>
+<tr class="memdesc:a942f7d7c58a6992600b6adda70e5e14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new point into the stack of partially constructed convex hull.  <a href="#a942f7d7c58a6992600b6adda70e5e14d">More...</a><br /></td></tr>
+<tr class="separator:a942f7d7c58a6992600b6adda70e5e14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87ba02c8b5dd0ba8e96c2b09e9c9b79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ad87ba02c8b5dd0ba8e96c2b09e9c9b79">isBelow</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; pivot, <a class="el" href="classPoint.html">Point</a>&lt; T &gt; a, <a class="el" href="classPoint.html">Point</a>&lt; T &gt; b)</td></tr>
+<tr class="memdesc:ad87ba02c8b5dd0ba8e96c2b09e9c9b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if 'a' lies strictly to left of 'b' (in orientation) w.r.t pivot.  <a href="#ad87ba02c8b5dd0ba8e96c2b09e9c9b79">More...</a><br /></td></tr>
+<tr class="separator:ad87ba02c8b5dd0ba8e96c2b09e9c9b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977e22d33d7ebed099a17c76698be137"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a977e22d33d7ebed099a17c76698be137">isAbove</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; pivot, <a class="el" href="classPoint.html">Point</a>&lt; T &gt; a, <a class="el" href="classPoint.html">Point</a>&lt; T &gt; b)</td></tr>
+<tr class="memdesc:a977e22d33d7ebed099a17c76698be137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a lies strictly to right of b (in orientation) w.r.t pivot.  <a href="#a977e22d33d7ebed099a17c76698be137">More...</a><br /></td></tr>
+<tr class="separator:a977e22d33d7ebed099a17c76698be137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6eec90fe568ee1b61ec1d8bba4c309e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ae6eec90fe568ee1b61ec1d8bba4c309e">getPoint</a> (int idx)</td></tr>
+<tr class="memdesc:ae6eec90fe568ee1b61ec1d8bba4c309e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classPoint.html">Point</a> from convex hull at position 'idx'.  <a href="#ae6eec90fe568ee1b61ec1d8bba4c309e">More...</a><br /></td></tr>
+<tr class="separator:ae6eec90fe568ee1b61ec1d8bba4c309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab90660de0ce0be702da0760f37f7d797"><td class="memItemLeft" align="right" valign="top">stack&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#ab90660de0ce0be702da0760f37f7d797">order</a></td></tr>
-<tr class="memdesc:ab90660de0ce0be702da0760f37f7d797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Order stack for maintaining points in the partially constructed convex hull.  <a href="#ab90660de0ce0be702da0760f37f7d797">More...</a><br /></td></tr>
-<tr class="separator:ab90660de0ce0be702da0760f37f7d797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d28337ba41b02338253a3ebbec09463"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a6d28337ba41b02338253a3ebbec09463">numPoints</a></td></tr>
-<tr class="memdesc:a6d28337ba41b02338253a3ebbec09463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in input.  <a href="#a6d28337ba41b02338253a3ebbec09463">More...</a><br /></td></tr>
-<tr class="separator:a6d28337ba41b02338253a3ebbec09463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e8a22177ddeb913962a75e5b9f00dc9"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a9e8a22177ddeb913962a75e5b9f00dc9">convexHull</a></td></tr>
-<tr class="memdesc:a9e8a22177ddeb913962a75e5b9f00dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter clockwiser order of points in the convex hull.  <a href="#a9e8a22177ddeb913962a75e5b9f00dc9">More...</a><br /></td></tr>
-<tr class="separator:a9e8a22177ddeb913962a75e5b9f00dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a201595ff26bee9c3084e8fce0e7643ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a201595ff26bee9c3084e8fce0e7643ad">convexHullSize</a></td></tr>
-<tr class="memdesc:a201595ff26bee9c3084e8fce0e7643ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in convex hull.  <a href="#a201595ff26bee9c3084e8fce0e7643ad">More...</a><br /></td></tr>
-<tr class="separator:a201595ff26bee9c3084e8fce0e7643ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586a222b7f2127410d9e20fda19c64d3"><td class="memItemLeft" align="right" valign="top">stack&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a586a222b7f2127410d9e20fda19c64d3">order</a></td></tr>
+<tr class="memdesc:a586a222b7f2127410d9e20fda19c64d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Order stack for maintaining points in the partially constructed convex hull.  <a href="#a586a222b7f2127410d9e20fda19c64d3">More...</a><br /></td></tr>
+<tr class="separator:a586a222b7f2127410d9e20fda19c64d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4769bbdb7caacde8c368a0074fccef19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a4769bbdb7caacde8c368a0074fccef19">numPoints</a></td></tr>
+<tr class="memdesc:a4769bbdb7caacde8c368a0074fccef19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in input.  <a href="#a4769bbdb7caacde8c368a0074fccef19">More...</a><br /></td></tr>
+<tr class="separator:a4769bbdb7caacde8c368a0074fccef19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d93b90073f5d60d142f8470ac8bf714"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a7d93b90073f5d60d142f8470ac8bf714">convexHull</a></td></tr>
+<tr class="memdesc:a7d93b90073f5d60d142f8470ac8bf714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter clockwiser order of points in the convex hull.  <a href="#a7d93b90073f5d60d142f8470ac8bf714">More...</a><br /></td></tr>
+<tr class="separator:a7d93b90073f5d60d142f8470ac8bf714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d428a11cebb2ff2f9e91d2644d7d0c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan.html#a5d428a11cebb2ff2f9e91d2644d7d0c5">convexHullSize</a></td></tr>
+<tr class="memdesc:a5d428a11cebb2ff2f9e91d2644d7d0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of points in convex hull.  <a href="#a5d428a11cebb2ff2f9e91d2644d7d0c5">More...</a><br /></td></tr>
+<tr class="separator:a5d428a11cebb2ff2f9e91d2644d7d0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa774467ce21242d7ef7ffbd1680a6d61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa774467ce21242d7ef7ffbd1680a6d61">&#9670;&nbsp;</a></span>GrahamScan()</h2>
+<a id="af518504ce673b75e7bef7a0de90e7699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af518504ce673b75e7bef7a0de90e7699">&#9670;&nbsp;</a></span>GrahamScan()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">GrahamScan::GrahamScan </td>
+          <td class="memname"><a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::<a class="el" href="classGrahamScan.html">GrahamScan</a> </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>points</em></td><td>)</td>
           <td></td>
         </tr>
@@ -149,35 +151,39 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a374db012cb6a96fcb8530d07cddd498e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a374db012cb6a96fcb8530d07cddd498e">&#9670;&nbsp;</a></span>getConvexHull()</h2>
+<a id="a0731f364efdbbb6028a38c623e99766d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0731f364efdbbb6028a38c623e99766d">&#9670;&nbsp;</a></span>getConvexHull()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; GrahamScan::getConvexHull </td>
+          <td class="memname">vector&lt; <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::getConvexHull </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>vector&lt;Point&gt; set of points in convex hull in counter clockwise order </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;Point&lt;T&gt;&gt; set of points in convex hull in counter clockwise order </dd></dl>
 
 </div>
 </div>
-<a id="a79b1642bc347f2f6e517b2f3415e871d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b1642bc347f2f6e517b2f3415e871d">&#9670;&nbsp;</a></span>getPoint()</h2>
+<a id="ae6eec90fe568ee1b61ec1d8bba4c309e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6eec90fe568ee1b61ec1d8bba4c309e">&#9670;&nbsp;</a></span>getPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPoint.html">Point</a> GrahamScan::getPoint </td>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a>&lt; T &gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::getPoint </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>idx</em></td><td>)</td>
@@ -202,16 +208,18 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae01e3fe104346f991f951a6843a15893"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae01e3fe104346f991f951a6843a15893">&#9670;&nbsp;</a></span>getRightTangentPoint()</h2>
+<a id="af47ec86625b2f4f32752c92ef29fbcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47ec86625b2f4f32752c92ef29fbcbd">&#9670;&nbsp;</a></span>getRightTangentPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPoint.html">Point</a> GrahamScan::getRightTangentPoint </td>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a>&lt; T &gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::getRightTangentPoint </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>pivot</em></td><td>)</td>
           <td></td>
         </tr>
@@ -229,19 +237,21 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4996cb0d2deb3cd6f9cb3df99b91e7e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4996cb0d2deb3cd6f9cb3df99b91e7e8">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="a942f7d7c58a6992600b6adda70e5e14d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942f7d7c58a6992600b6adda70e5e14d">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GrahamScan::insert </td>
+          <td class="memname">void <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::insert </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
@@ -263,31 +273,33 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab860e33708a7cf494b0708c49a303c0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab860e33708a7cf494b0708c49a303c0c">&#9670;&nbsp;</a></span>isAbove()</h2>
+<a id="a977e22d33d7ebed099a17c76698be137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a977e22d33d7ebed099a17c76698be137">&#9670;&nbsp;</a></span>isAbove()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GrahamScan::isAbove </td>
+          <td class="memname">bool <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::isAbove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>pivot</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -318,31 +330,33 @@ false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="aff60053b35be2c735b37dd88e079d460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff60053b35be2c735b37dd88e079d460">&#9670;&nbsp;</a></span>isBelow()</h2>
+<a id="ad87ba02c8b5dd0ba8e96c2b09e9c9b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87ba02c8b5dd0ba8e96c2b09e9c9b79">&#9670;&nbsp;</a></span>isBelow()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GrahamScan::isBelow </td>
+          <td class="memname">bool <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::isBelow </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>pivot</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -374,17 +388,19 @@ false otherwise </dd></dl>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9e8a22177ddeb913962a75e5b9f00dc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e8a22177ddeb913962a75e5b9f00dc9">&#9670;&nbsp;</a></span>convexHull</h2>
+<a id="a7d93b90073f5d60d142f8470ac8bf714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d93b90073f5d60d142f8470ac8bf714">&#9670;&nbsp;</a></span>convexHull</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&gt; GrahamScan::convexHull</td>
+          <td class="memname">vector&lt;<a class="el" href="classPoint.html">Point</a>&lt;T&gt; &gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::convexHull</td>
         </tr>
       </table>
   </td>
@@ -398,17 +414,19 @@ false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="a201595ff26bee9c3084e8fce0e7643ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a201595ff26bee9c3084e8fce0e7643ad">&#9670;&nbsp;</a></span>convexHullSize</h2>
+<a id="a5d428a11cebb2ff2f9e91d2644d7d0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d428a11cebb2ff2f9e91d2644d7d0c5">&#9670;&nbsp;</a></span>convexHullSize</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int GrahamScan::convexHullSize</td>
+          <td class="memname">int <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::convexHullSize</td>
         </tr>
       </table>
   </td>
@@ -422,17 +440,19 @@ false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="a6d28337ba41b02338253a3ebbec09463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d28337ba41b02338253a3ebbec09463">&#9670;&nbsp;</a></span>numPoints</h2>
+<a id="a4769bbdb7caacde8c368a0074fccef19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4769bbdb7caacde8c368a0074fccef19">&#9670;&nbsp;</a></span>numPoints</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int GrahamScan::numPoints</td>
+          <td class="memname">int <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::numPoints</td>
         </tr>
       </table>
   </td>
@@ -446,17 +466,19 @@ false otherwise </dd></dl>
 
 </div>
 </div>
-<a id="ab90660de0ce0be702da0760f37f7d797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab90660de0ce0be702da0760f37f7d797">&#9670;&nbsp;</a></span>order</h2>
+<a id="a586a222b7f2127410d9e20fda19c64d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586a222b7f2127410d9e20fda19c64d3">&#9670;&nbsp;</a></span>order</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">stack&lt;<a class="el" href="classPoint.html">Point</a>&gt; GrahamScan::order</td>
+          <td class="memname">stack&lt;<a class="el" href="classPoint.html">Point</a>&lt;T&gt; &gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::order</td>
         </tr>
       </table>
   </td>

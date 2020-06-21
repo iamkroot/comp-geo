@@ -7,13 +7,13 @@ int main()
 {
     int n;
     cin >> n;
-    vector<Point> points;
+    vector<Point<int>> points;
     for(int i = 1; i <= n; i++)
     {
         int x, y;
         cin >> x >> y;
-        points.push_back(Point(x, y));
+        points.push_back(Point<int>(x, y));
     }
-    GrahamScan(points).getRightTangentPoint(Point(990, 614)).print();
+    GrahamScan<int>(points).getRightTangentPoint(Point<int>(990, 614)).print();
     return 0;
 }

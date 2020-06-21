@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['getconvexhull',['getConvexHull',['../classChan.html#a1382d15aa44de4e9182f2cc74cbf1dea',1,'Chan::getConvexHull()'],['../classGrahamScan.html#a374db012cb6a96fcb8530d07cddd498e',1,'GrahamScan::getConvexHull()']]],
-  ['getnext',['getNext',['../classJarvisStep.html#abe7e3817650fed66b7c5109839d355bc',1,'JarvisStep']]],
-  ['getpoint',['getPoint',['../classGrahamScan.html#a79b1642bc347f2f6e517b2f3415e871d',1,'GrahamScan']]],
-  ['getrighttangentpoint',['getRightTangentPoint',['../classGrahamScan.html#ae01e3fe104346f991f951a6843a15893',1,'GrahamScan']]],
-  ['grahamscan',['GrahamScan',['../classGrahamScan.html',1,'GrahamScan'],['../classGrahamScan.html#aa774467ce21242d7ef7ffbd1680a6d61',1,'GrahamScan::GrahamScan()']]],
+  ['getconvexhull',['getConvexHull',['../classChan.html#a3cfcc1c908e1b4fde9bddb33d1af6d65',1,'Chan::getConvexHull()'],['../classGrahamScan.html#a0731f364efdbbb6028a38c623e99766d',1,'GrahamScan::getConvexHull()']]],
+  ['getnext',['getNext',['../classJarvisStep.html#a66f21d257e022fdeb8dc028bd2ac716c',1,'JarvisStep']]],
+  ['getpoint',['getPoint',['../classGrahamScan.html#ae6eec90fe568ee1b61ec1d8bba4c309e',1,'GrahamScan']]],
+  ['getrighttangentpoint',['getRightTangentPoint',['../classGrahamScan.html#af47ec86625b2f4f32752c92ef29fbcbd',1,'GrahamScan']]],
+  ['grahamscan',['GrahamScan',['../classGrahamScan.html',1,'GrahamScan&lt; T &gt;'],['../classGrahamScan.html#af518504ce673b75e7bef7a0de90e7699',1,'GrahamScan::GrahamScan()']]],
   ['grahamscan_2ecpp',['GrahamScan.cpp',['../GrahamScan_8cpp.html',1,'']]],
   ['grahamscan_2ehpp',['GrahamScan.hpp',['../GrahamScan_8hpp.html',1,'']]]
 ];

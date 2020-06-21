@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: GrahamScan::Comparator Class Reference</title>
+<title>My Project: GrahamScan&lt; T &gt;::Comparator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classGrahamScan_1_1Comparator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GrahamScan::Comparator Class Reference</div>  </div>
+<div class="title">GrahamScan&lt; T &gt;::Comparator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -79,32 +79,37 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d8fd2d1f831e3d9271a8b5e29dadddf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#a8d8fd2d1f831e3d9271a8b5e29dadddf">Comparator</a> (<a class="el" href="classPoint.html">Point</a> <a class="el" href="classGrahamScan_1_1Comparator.html#ab63927ef091a22dee8e29d8b27f8f7c3">pivot</a>)</td></tr>
-<tr class="separator:a8d8fd2d1f831e3d9271a8b5e29dadddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53344fb7ac1cf932b7e348c0a729d9dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#a53344fb7ac1cf932b7e348c0a729d9dc">operator()</a> (<a class="el" href="classPoint.html">Point</a> &amp;p1, <a class="el" href="classPoint.html">Point</a> &amp;p2)</td></tr>
-<tr class="separator:a53344fb7ac1cf932b7e348c0a729d9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2c77065f6e3ef65989f1ea5ed68ffa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#ada2c77065f6e3ef65989f1ea5ed68ffa">Comparator</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; <a class="el" href="classGrahamScan_1_1Comparator.html#ad20dd6c63895a0924c743879f721b4a8">pivot</a>)</td></tr>
+<tr class="separator:ada2c77065f6e3ef65989f1ea5ed68ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3495ee5d0f1c01f201373b77f71514cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#a3495ee5d0f1c01f201373b77f71514cb">operator()</a> (<a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;p1, <a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;p2)</td></tr>
+<tr class="separator:a3495ee5d0f1c01f201373b77f71514cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab63927ef091a22dee8e29d8b27f8f7c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#ab63927ef091a22dee8e29d8b27f8f7c3">pivot</a></td></tr>
-<tr class="separator:ab63927ef091a22dee8e29d8b27f8f7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20dd6c63895a0924c743879f721b4a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGrahamScan_1_1Comparator.html#ad20dd6c63895a0924c743879f721b4a8">pivot</a></td></tr>
+<tr class="separator:ad20dd6c63895a0924c743879f721b4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p class="">Compare ordering of points for graham's scan. </p>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class GrahamScan&lt; T &gt;::Comparator</h3>
+
+<p class="">Compare ordering of points for graham's scan. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8d8fd2d1f831e3d9271a8b5e29dadddf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d8fd2d1f831e3d9271a8b5e29dadddf">&#9670;&nbsp;</a></span>Comparator()</h2>
+<a id="ada2c77065f6e3ef65989f1ea5ed68ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2c77065f6e3ef65989f1ea5ed68ffa">&#9670;&nbsp;</a></span>Comparator()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GrahamScan::Comparator::Comparator </td>
+          <td class="memname"><a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::Comparator::Comparator </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt;&#160;</td>
           <td class="paramname"><em>pivot</em></td><td>)</td>
           <td></td>
         </tr>
@@ -119,25 +124,27 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a53344fb7ac1cf932b7e348c0a729d9dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53344fb7ac1cf932b7e348c0a729d9dc">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a3495ee5d0f1c01f201373b77f71514cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3495ee5d0f1c01f201373b77f71514cb">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool GrahamScan::Comparator::operator() </td>
+          <td class="memname">bool <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::Comparator::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>p1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classPoint.html">Point</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classPoint.html">Point</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>p2</em>&#160;</td>
         </tr>
         <tr>
@@ -156,17 +163,19 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab63927ef091a22dee8e29d8b27f8f7c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab63927ef091a22dee8e29d8b27f8f7c3">&#9670;&nbsp;</a></span>pivot</h2>
+<a id="ad20dd6c63895a0924c743879f721b4a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20dd6c63895a0924c743879f721b4a8">&#9670;&nbsp;</a></span>pivot</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classPoint.html">Point</a> GrahamScan::Comparator::pivot</td>
+          <td class="memname"><a class="el" href="classPoint.html">Point</a>&lt;T&gt; <a class="el" href="classGrahamScan.html">GrahamScan</a>&lt; T &gt;::Comparator::pivot</td>
         </tr>
       </table>
   </td>

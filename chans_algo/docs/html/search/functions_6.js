@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['point',['Point',['../classPoint.html#ad92f2337b839a94ce97dcdb439b4325a',1,'Point::Point()'],['../classPoint.html#a810fc4436b6631341363abfedbd6bb97',1,'Point::Point(int a, int b)']]],
-  ['print',['print',['../classPoint.html#a76c5855c06d98aed16b5796a9a50bbee',1,'Point']]]
+  ['point',['Point',['../classPoint.html#aea76b1130f1a203722d8f2254ced8e66',1,'Point::Point()'],['../classPoint.html#a6583d71c9cddfe6e079135c724ea228c',1,'Point::Point(T a, T b)']]],
+  ['print',['print',['../classPoint.html#acc51bfe04c5f9bcb8686e74d8f7b7bc1',1,'Point']]]
 ];

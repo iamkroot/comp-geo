@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['restrictedconvexhull',['restrictedConvexHull',['../classChan.html#a3a7eb4017718654b6f7f13daaef90534',1,'Chan']]]
+  ['restrictedconvexhull',['restrictedConvexHull',['../classChan.html#a773b2ebe27132ccfacedd5efebd63093',1,'Chan']]]
 ];

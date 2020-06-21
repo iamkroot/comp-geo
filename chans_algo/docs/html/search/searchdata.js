@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "cgjpu",
   2: "bcgjmptu",
   3: "cgijmoprsu",
-  4: "cinopxy"
+  4: "cnopxy"
 };
 
 var indexSectionNames =
