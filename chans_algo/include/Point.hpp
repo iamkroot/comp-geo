@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template<class T>
+template <class T>
 class Point
 {
 
@@ -35,7 +35,7 @@ public:
      * @return true If 'this' point is lesser in ordering
      * @return false otherwise
      */
-    bool operator<(const Point &p)
+    bool operator<(const Point<T> &p)
     {
         if (x != p.x)
             return x < p.x;
@@ -49,7 +49,7 @@ public:
      * @return true 
      * @return false 
      */
-    bool operator==(const Point &p)
+    bool operator==(const Point<T> &p)
     {
         return (x == p.x && y == p.y);
     }
@@ -60,9 +60,11 @@ public:
      * @param p 
      * @return int signed area of the parallelipiped formed by the vectors
      */
-    int cross(Point &p)
+    pair<double, double> cross(Point<T> &p)
     {
-        return (x * p.y - p.x * y);
+        double a = (double)x * (double)p.y;
+        double b = (double)p.x * (double)y;
+        return {a, b};
     }
 
     /**
@@ -73,17 +75,17 @@ public:
      * @param p3 
      * @return int value signifying orientation
      */
-    static int orient(const Point &p1, const Point &p2, const Point &p3)
+    static int orient(const Point<T> &p1, const Point<T> &p2, const Point<T> &p3)
     {
-        Point v1(p2.x - p1.x, p2.y - p1.y);
-        Point v2(p3.x - p2.x, p3.y - p2.y);
-        int o = v1.cross(v2);
-        if (o > 0)
+        Point<T> v1(p2.x - p1.x, p2.y - p1.y);
+        Point<T> v2(p3.x - p2.x, p3.y - p2.y);
+        auto o = v1.cross(v2);
+        if (o.first > o.second)
             return 1;
-        else if (o == 0)
-            return 0;
-        else
+        else if (o.first < o.second)
             return -1;
+        else
+            return 0;
     }
 
     /**
@@ -92,14 +94,15 @@ public:
      * @param p 
      * @return int distance
      */
-    int squaredDistance(Point &p)
+    double squaredDistance(Point<T> &p)
     {
-        return Utils<T>::square(x - p.x) + Utils<T>::square(y - p.y);
+        double dx = (double)x - (double)p.x;
+        double dy = (double)y - (double)p.y;
+        return Utils<double>::square(dx) + Utils<double>::square(dy);
     }
 
     /**
      * @brief Utility to print the point
-     * 
      */
     void print()
     {

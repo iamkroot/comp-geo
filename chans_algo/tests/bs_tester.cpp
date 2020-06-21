@@ -14,6 +14,6 @@ int main()
         cin >> x >> y;
         points.push_back(Point<int>(x, y));
     }
-    GrahamScan<int>(points).getRightTangentPoint(Point<int>(990, 614)).print();
+    GrahamScan<int>(points).getRightTangentPoint(Point<int>(-151367802, -374247154)).print();
     return 0;
 }
