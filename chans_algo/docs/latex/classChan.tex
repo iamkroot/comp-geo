@@ -1,0 +1,164 @@
+\hypertarget{classChan}{}\section{Chan Class Reference}
+\label{classChan}\index{Chan@{Chan}}
+
+
+{\ttfamily \#include $<$Chan.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChan_a0b17366e6548967ea27702d9ae37f394}{Chan}} (vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a3c867cd91392509f20644fc59d73778c}{points}})
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classChan}{Chan}} object. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}{get\+Convex\+Hull}} ()
+\begin{DoxyCompactList}\small\item\em Get convex hull computed using \mbox{\hyperlink{classChan}{Chan}}\textquotesingle{}s algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classChan_a3a7eb4017718654b6f7f13daaef90534}{restricted\+Convex\+Hull}} (int guessed\+Hull\+Size)
+\begin{DoxyCompactList}\small\item\em Tries to compute convex hull using given partition size (guessed size of hull) \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ $>$ \mbox{\hyperlink{classChan_a767dbe606a11c923d4effd7250529900}{compute\+Partitions}} (int partition\+Size)
+\begin{DoxyCompactList}\small\item\em Divide input points equally into partitions of size \textquotesingle{}partition\+Size\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a3c867cd91392509f20644fc59d73778c}{points}}
+\begin{DoxyCompactList}\small\item\em Input points for computing convex hull. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classChan_a983333f17209e944e2218f83c6db04a8}{convex\+Hull}}
+\begin{DoxyCompactList}\small\item\em Set of points in the convex hull in counter clockwise order. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classChan_a9f906daeea67573ca4fc09da32d2395f}{num\+Points}}
+\begin{DoxyCompactList}\small\item\em Number of points in the input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classChan_ae77990baa3fc9811d17fed02e4b73d70}{convex\+Hull\+Size}}
+\begin{DoxyCompactList}\small\item\em Convex Hull size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classChan_a50d101e7ce6ac726592d8dc2f341cade}{pivot}}
+\begin{DoxyCompactList}\small\item\em Pivot point in input points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChan_a0b17366e6548967ea27702d9ae37f394}\label{classChan_a0b17366e6548967ea27702d9ae37f394}} 
+\index{Chan@{Chan}!Chan@{Chan}}
+\index{Chan@{Chan}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{Chan()}{Chan()}}
+{\footnotesize\ttfamily Chan\+::\+Chan (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$}]{points }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classChan}{Chan}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Set of input points \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classChan_a767dbe606a11c923d4effd7250529900}\label{classChan_a767dbe606a11c923d4effd7250529900}} 
+\index{Chan@{Chan}!compute\+Partitions@{compute\+Partitions}}
+\index{compute\+Partitions@{compute\+Partitions}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{compute\+Partitions()}{computePartitions()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ $>$ Chan\+::compute\+Partitions (\begin{DoxyParamCaption}\item[{int}]{partition\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Divide input points equally into partitions of size \textquotesingle{}partition\+Size\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em partition\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$vector$<$\+Point$>$$>$ Partitions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}\label{classChan_a1382d15aa44de4e9182f2cc74cbf1dea}} 
+\index{Chan@{Chan}!get\+Convex\+Hull@{get\+Convex\+Hull}}
+\index{get\+Convex\+Hull@{get\+Convex\+Hull}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{get\+Convex\+Hull()}{getConvexHull()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ Chan\+::get\+Convex\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get convex hull computed using \mbox{\hyperlink{classChan}{Chan}}\textquotesingle{}s algorithm. 
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+Point$>$ Set of points int convex hull in counter clockwise order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classChan_a3a7eb4017718654b6f7f13daaef90534}\label{classChan_a3a7eb4017718654b6f7f13daaef90534}} 
+\index{Chan@{Chan}!restricted\+Convex\+Hull@{restricted\+Convex\+Hull}}
+\index{restricted\+Convex\+Hull@{restricted\+Convex\+Hull}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{restricted\+Convex\+Hull()}{restrictedConvexHull()}}
+{\footnotesize\ttfamily bool Chan\+::restricted\+Convex\+Hull (\begin{DoxyParamCaption}\item[{int}]{guessed\+Hull\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tries to compute convex hull using given partition size (guessed size of hull) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em guessed\+Hull\+Size} & Guessed size of hull \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If algorithm completes, i.\+e. guessed size if greater or equal to actual hull size 
+
+false If algorithm fails to complete 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classChan_a983333f17209e944e2218f83c6db04a8}\label{classChan_a983333f17209e944e2218f83c6db04a8}} 
+\index{Chan@{Chan}!convex\+Hull@{convex\+Hull}}
+\index{convex\+Hull@{convex\+Hull}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{convex\+Hull}{convexHull}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPoint}{Point}}$>$ Chan\+::convex\+Hull\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of points in the convex hull in counter clockwise order. 
+
+\mbox{\Hypertarget{classChan_ae77990baa3fc9811d17fed02e4b73d70}\label{classChan_ae77990baa3fc9811d17fed02e4b73d70}} 
+\index{Chan@{Chan}!convex\+Hull\+Size@{convex\+Hull\+Size}}
+\index{convex\+Hull\+Size@{convex\+Hull\+Size}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{convex\+Hull\+Size}{convexHullSize}}
+{\footnotesize\ttfamily int Chan\+::convex\+Hull\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Convex Hull size. 
+
+\mbox{\Hypertarget{classChan_a9f906daeea67573ca4fc09da32d2395f}\label{classChan_a9f906daeea67573ca4fc09da32d2395f}} 
+\index{Chan@{Chan}!num\+Points@{num\+Points}}
+\index{num\+Points@{num\+Points}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{num\+Points}{numPoints}}
+{\footnotesize\ttfamily int Chan\+::num\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of points in the input. 
+
+\mbox{\Hypertarget{classChan_a50d101e7ce6ac726592d8dc2f341cade}\label{classChan_a50d101e7ce6ac726592d8dc2f341cade}} 
+\index{Chan@{Chan}!pivot@{pivot}}
+\index{pivot@{pivot}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{pivot}{pivot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Chan\+::pivot\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pivot point in input points. 
+
+\mbox{\Hypertarget{classChan_a3c867cd91392509f20644fc59d73778c}\label{classChan_a3c867cd91392509f20644fc59d73778c}} 
+\index{Chan@{Chan}!points@{points}}
+\index{points@{points}!Chan@{Chan}}
+\subsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPoint}{Point}}$>$ Chan\+::points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input points for computing convex hull. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Chan_8hpp}{Chan.\+hpp}}\item 
+src/\mbox{\hyperlink{Chan_8cpp}{Chan.\+cpp}}\end{DoxyCompactItemize}

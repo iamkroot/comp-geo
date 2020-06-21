@@ -1,0 +1,85 @@
+\hypertarget{classJarvisStep}{}\section{Jarvis\+Step Class Reference}
+\label{classJarvisStep}\index{Jarvis\+Step@{Jarvis\+Step}}
+
+
+{\ttfamily \#include $<$Jarvis\+Step.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJarvisStep_afe702ba01d8077f819b82fa698d3a835}{Jarvis\+Step}} (\mbox{\hyperlink{classPoint}{Point}} pivot, vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Construct a new Jarvis March object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classJarvisStep_abe7e3817650fed66b7c5109839d355bc}{get\+Next}} ()
+\begin{DoxyCompactList}\small\item\em Get the next point in jarvis march. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classJarvisStep_a7616fe9780bd2285b3d01b8262d719bb}{num\+Points}}
+\begin{DoxyCompactList}\small\item\em Number of points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classJarvisStep_a503a36c2f9fcd1bcb7a88b46849142fc}{next\+Point}}
+\begin{DoxyCompactList}\small\item\em Next point in jarvis march. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJarvisStep_afe702ba01d8077f819b82fa698d3a835}\label{classJarvisStep_afe702ba01d8077f819b82fa698d3a835}} 
+\index{Jarvis\+Step@{Jarvis\+Step}!Jarvis\+Step@{Jarvis\+Step}}
+\index{Jarvis\+Step@{Jarvis\+Step}!Jarvis\+Step@{Jarvis\+Step}}
+\subsubsection{\texorpdfstring{Jarvis\+Step()}{JarvisStep()}}
+{\footnotesize\ttfamily Jarvis\+Step\+::\+Jarvis\+Step (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{pivot,  }\item[{vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \&}]{points }\end{DoxyParamCaption})}
+
+
+
+Construct a new Jarvis March object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pivot} & Reference pivot from which points are compared \\
+\hline
+{\em points} & Set of candidate points for Convex Hull \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classJarvisStep_abe7e3817650fed66b7c5109839d355bc}\label{classJarvisStep_abe7e3817650fed66b7c5109839d355bc}} 
+\index{Jarvis\+Step@{Jarvis\+Step}!get\+Next@{get\+Next}}
+\index{get\+Next@{get\+Next}!Jarvis\+Step@{Jarvis\+Step}}
+\subsubsection{\texorpdfstring{get\+Next()}{getNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Jarvis\+Step\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the next point in jarvis march. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classPoint}{Point}} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classJarvisStep_a503a36c2f9fcd1bcb7a88b46849142fc}\label{classJarvisStep_a503a36c2f9fcd1bcb7a88b46849142fc}} 
+\index{Jarvis\+Step@{Jarvis\+Step}!next\+Point@{next\+Point}}
+\index{next\+Point@{next\+Point}!Jarvis\+Step@{Jarvis\+Step}}
+\subsubsection{\texorpdfstring{next\+Point}{nextPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Jarvis\+Step\+::next\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Next point in jarvis march. 
+
+\mbox{\Hypertarget{classJarvisStep_a7616fe9780bd2285b3d01b8262d719bb}\label{classJarvisStep_a7616fe9780bd2285b3d01b8262d719bb}} 
+\index{Jarvis\+Step@{Jarvis\+Step}!num\+Points@{num\+Points}}
+\index{num\+Points@{num\+Points}!Jarvis\+Step@{Jarvis\+Step}}
+\subsubsection{\texorpdfstring{num\+Points}{numPoints}}
+{\footnotesize\ttfamily int Jarvis\+Step\+::num\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of points. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{JarvisStep_8hpp}{Jarvis\+Step.\+hpp}}\item 
+src/\mbox{\hyperlink{JarvisStep_8cpp}{Jarvis\+Step.\+cpp}}\end{DoxyCompactItemize}
