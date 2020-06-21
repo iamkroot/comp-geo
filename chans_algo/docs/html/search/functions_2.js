@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['insert',['insert',['../classGrahamScan.html#a4996cb0d2deb3cd6f9cb3df99b91e7e8',1,'GrahamScan']]],
-  ['isabove',['isAbove',['../classGrahamScan.html#ab860e33708a7cf494b0708c49a303c0c',1,'GrahamScan']]],
-  ['isbelow',['isBelow',['../classGrahamScan.html#aff60053b35be2c735b37dd88e079d460',1,'GrahamScan']]]
+  ['insert',['insert',['../classGrahamScan.html#a942f7d7c58a6992600b6adda70e5e14d',1,'GrahamScan']]],
+  ['isabove',['isAbove',['../classGrahamScan.html#a977e22d33d7ebed099a17c76698be137',1,'GrahamScan']]],
+  ['isbelow',['isBelow',['../classGrahamScan.html#ad87ba02c8b5dd0ba8e96c2b09e9c9b79',1,'GrahamScan']]]
 ];

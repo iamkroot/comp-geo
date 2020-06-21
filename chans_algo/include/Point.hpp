@@ -3,11 +3,12 @@
 
 using namespace std;
 
+template<class T>
 class Point
 {
 
 public:
-    int x, y;
+    T x, y;
 
     Point()
     {
@@ -21,7 +22,7 @@ public:
      * @param a 
      * @param b 
      */
-    Point(int a, int b)
+    Point(T a, T b)
     {
         x = a;
         y = b;
@@ -93,7 +94,7 @@ public:
      */
     int squaredDistance(Point &p)
     {
-        return Utils::square(x - p.x) + Utils::square(y - p.y);
+        return Utils<T>::square(x - p.x) + Utils<T>::square(y - p.y);
     }
 
     /**

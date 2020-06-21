@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['convexhull',['convexHull',['../classChan.html#a983333f17209e944e2218f83c6db04a8',1,'Chan::convexHull()'],['../classGrahamScan.html#a9e8a22177ddeb913962a75e5b9f00dc9',1,'GrahamScan::convexHull()']]],
-  ['convexhullsize',['convexHullSize',['../classChan.html#ae77990baa3fc9811d17fed02e4b73d70',1,'Chan::convexHullSize()'],['../classGrahamScan.html#a201595ff26bee9c3084e8fce0e7643ad',1,'GrahamScan::convexHullSize()']]]
+  ['convexhull',['convexHull',['../classChan.html#a6b189fb8de493f51a989f5c90dc7bbcc',1,'Chan::convexHull()'],['../classGrahamScan.html#a7d93b90073f5d60d142f8470ac8bf714',1,'GrahamScan::convexHull()']]],
+  ['convexhullsize',['convexHullSize',['../classChan.html#a366f3dd178f14b5e146e6a80aea8e039',1,'Chan::convexHullSize()'],['../classGrahamScan.html#a5d428a11cebb2ff2f9e91d2644d7d0c5',1,'GrahamScan::convexHullSize()']]]
 ];

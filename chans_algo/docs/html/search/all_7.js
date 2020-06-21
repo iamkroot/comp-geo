@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['operator_28_29',['operator()',['../classGrahamScan_1_1Comparator.html#a53344fb7ac1cf932b7e348c0a729d9dc',1,'GrahamScan::Comparator']]],
-  ['operator_3c',['operator&lt;',['../classPoint.html#a9d0a9f62ffc7345f802085706101cd62',1,'Point']]],
-  ['operator_3d_3d',['operator==',['../classPoint.html#a1a69a0a1dea189f07e044f6eb868937d',1,'Point']]],
-  ['order',['order',['../classGrahamScan.html#ab90660de0ce0be702da0760f37f7d797',1,'GrahamScan']]],
-  ['orient',['orient',['../classPoint.html#a16b12efe91681c389f0546a74fdf0886',1,'Point']]]
+  ['operator_28_29',['operator()',['../classGrahamScan_1_1Comparator.html#a3495ee5d0f1c01f201373b77f71514cb',1,'GrahamScan::Comparator']]],
+  ['operator_3c',['operator&lt;',['../classPoint.html#aae9fe5d91cff10489624a97c06943031',1,'Point']]],
+  ['operator_3d_3d',['operator==',['../classPoint.html#a5241a7c8bfe2a0494b789cad25b52ada',1,'Point']]],
+  ['order',['order',['../classGrahamScan.html#a586a222b7f2127410d9e20fda19c64d3',1,'GrahamScan']]],
+  ['orient',['orient',['../classPoint.html#a825f7be514210803676ed97b988ad7a0',1,'Point']]]
 ];

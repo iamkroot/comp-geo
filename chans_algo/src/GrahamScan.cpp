@@ -2,13 +2,21 @@
 
 using namespace std;
 
-GrahamScan::GrahamScan(vector<Point> &points)
+// Allowed type bindings
+template class GrahamScan<int>;
+template class GrahamScan<long>;
+template class GrahamScan<long long>;
+template class GrahamScan<float>;
+template class GrahamScan<double>;
+
+template <class T>
+GrahamScan<T>::GrahamScan(vector<Point<T>> &points)
 {
     numPoints = points.size();
     assert(numPoints >= 3);
 
-    Point best(Utils::INF, Utils::INF);
-    for(Point &point: points)
+    Point<T> best(points[0]);
+    for (Point<T> &point : points)
         if (point < best)
             best = point;
 
@@ -25,7 +33,7 @@ GrahamScan::GrahamScan(vector<Point> &points)
     // Get all points in convex hull avoiding repeatition for lowermost-leftmost point
     while (!order.empty())
     {
-        Point top = order.top();
+        Point<T> top = order.top();
         convexHull.push_back(top);
         order.pop();
     }
@@ -33,11 +41,12 @@ GrahamScan::GrahamScan(vector<Point> &points)
     convexHullSize = convexHull.size();
 }
 
-void GrahamScan::insert(Point &p)
+template <class T>
+void GrahamScan<T>::insert(Point<T> &p)
 {
-    Point top = order.top();
+    Point<T> top = order.top();
     order.pop();
-    while (order.size() >= 1 && Point::orient(order.top(), top, p) <= 0)
+    while (order.size() >= 1 && Point<T>::orient(order.top(), top, p) <= 0)
     {
         top = order.top();
         order.pop();
@@ -46,16 +55,18 @@ void GrahamScan::insert(Point &p)
     order.push(p);
 }
 
-vector<Point> GrahamScan::getConvexHull()
+template <class T>
+vector<Point<T>> GrahamScan<T>::getConvexHull()
 {
     return convexHull;
 }
 
-bool GrahamScan::isAbove(Point pivot, Point a, Point b)
+template <class T>
+bool GrahamScan<T>::isAbove(Point<T> pivot, Point<T> a, Point<T> b)
 {
-    if (Point::orient(pivot, a, b) > 0)
+    if (Point<T>::orient(pivot, a, b) > 0)
         return true;
-    else if (Point::orient(pivot, a, b) == 0)
+    else if (Point<T>::orient(pivot, a, b) == 0)
     {
         if (pivot.squaredDistance(a) > pivot.squaredDistance(b))
             return true;
@@ -63,11 +74,12 @@ bool GrahamScan::isAbove(Point pivot, Point a, Point b)
     return false;
 }
 
-bool GrahamScan::isBelow(Point pivot, Point a, Point b)
+template <class T>
+bool GrahamScan<T>::isBelow(Point<T> pivot, Point<T> a, Point<T> b)
 {
-    if (Point::orient(pivot, a, b) < 0)
+    if (Point<T>::orient(pivot, a, b) < 0)
         return true;
-    else if (Point::orient(pivot, a, b) == 0)
+    else if (Point<T>::orient(pivot, a, b) == 0)
     {
         if (pivot.squaredDistance(a) < pivot.squaredDistance(b))
             return true;
@@ -75,10 +87,11 @@ bool GrahamScan::isBelow(Point pivot, Point a, Point b)
     return false;
 }
 
-Point GrahamScan::getRightTangentPoint(Point pivot)
+template <class T>
+Point<T> GrahamScan<T>::getRightTangentPoint(Point<T> pivot)
 {
     if (convexHullSize < 3)
-        return JarvisStep(pivot, convexHull).getNext();
+        return JarvisStep<T>(pivot, convexHull).getNext();
 
     // Check if convexHull[0] if local maximum
     if (isBelow(pivot, getPoint(1), getPoint(0)) &&
@@ -120,7 +133,8 @@ Point GrahamScan::getRightTangentPoint(Point pivot)
     }
 }
 
-Point GrahamScan::getPoint(int idx)
+template <class T>
+Point<T> GrahamScan<T>::getPoint(int idx)
 {
     if (idx >= convexHullSize)
         idx -= convexHullSize;

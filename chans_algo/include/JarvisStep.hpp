@@ -4,6 +4,7 @@
 
 using namespace std;
 
+template <class T>
 class JarvisStep
 {
     /**
@@ -14,7 +15,7 @@ class JarvisStep
     /**
      * @brief Next point in jarvis march
      */
-    Point nextPoint;
+    Point<T> nextPoint;
 
 public:
     /**
@@ -23,12 +24,12 @@ public:
      * @param pivot Reference pivot from which points are compared
      * @param points Set of candidate points for Convex Hull
      */
-    JarvisStep(Point pivot, vector<Point> &points);
+    JarvisStep(Point<T> pivot, vector<Point<T>> &points);
 
     /**
      * @brief Get the next point in jarvis march
      * 
-     * @return Point 
+     * @return Point<T> 
      */
-    Point getNext();
+    Point<T> getNext();
 };
