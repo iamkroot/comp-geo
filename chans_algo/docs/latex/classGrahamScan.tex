@@ -4,6 +4,11 @@
 
 {\ttfamily \#include $<$Graham\+Scan.\+hpp$>$}
 
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGrahamScan_1_1Comparator}{Comparator}}
+\begin{DoxyCompactList}\small\item\em Compare ordering of points for graham\textquotesingle{}s scan. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,17 +16,13 @@
 \begin{DoxyCompactList}\small\item\em Construct a new Graham Scan object. \end{DoxyCompactList}\item 
 vector$<$ \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classGrahamScan_a374db012cb6a96fcb8530d07cddd498e}{get\+Convex\+Hull}} ()
 \item 
-pair$<$ \mbox{\hyperlink{classPoint}{Point}}, \mbox{\hyperlink{classPoint}{Point}} $>$ \mbox{\hyperlink{classGrahamScan_ae308d2013337902df55fa4feae2aec60}{get\+Tangent\+Points}} (\mbox{\hyperlink{classPoint}{Point}} pivot)
-\begin{DoxyCompactList}\small\item\em Get the Tangent Points using binary search in O(log(num\+Points)) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classGrahamScan_ae01e3fe104346f991f951a6843a15893}{get\+Right\+Tangent\+Point}} (\mbox{\hyperlink{classPoint}{Point}} pivot)
+\begin{DoxyCompactList}\small\item\em Get the Right Tangent \mbox{\hyperlink{classPoint}{Point}}, using binary search on the convex hull from the pivot as reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classGrahamScan_a4996cb0d2deb3cd6f9cb3df99b91e7e8}{insert}} (\mbox{\hyperlink{classPoint}{Point}} \&p)
 \begin{DoxyCompactList}\small\item\em Insert new point into the stack of partially constructed convex hull. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classGrahamScan_ae01e3fe104346f991f951a6843a15893}{get\+Right\+Tangent\+Point}} (\mbox{\hyperlink{classPoint}{Point}} pivot)
-\begin{DoxyCompactList}\small\item\em Get the Right Tangent \mbox{\hyperlink{classPoint}{Point}}, using binary search on the convex hull from the pivot as reference. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classPoint}{Point}} \mbox{\hyperlink{classGrahamScan_a25068b534491cef265e5d7c038f82e7d}{get\+Left\+Tangent\+Point}} (\mbox{\hyperlink{classPoint}{Point}} pivot)
-\begin{DoxyCompactList}\small\item\em Get the Left Tangent \mbox{\hyperlink{classPoint}{Point}}, using binary search on the convex hull from the pivot as reference. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classGrahamScan_aff60053b35be2c735b37dd88e079d460}{is\+Below}} (\mbox{\hyperlink{classPoint}{Point}} pivot, \mbox{\hyperlink{classPoint}{Point}} a, \mbox{\hyperlink{classPoint}{Point}} b)
 \begin{DoxyCompactList}\small\item\em Determine if \textquotesingle{}a\textquotesingle{} lies strictly to left of \textquotesingle{}b\textquotesingle{} (in orientation) w.\+r.\+t pivot. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classGrahamScan_ab860e33708a7cf494b0708c49a303c0c}{is\+Above}} (\mbox{\hyperlink{classPoint}{Point}} pivot, \mbox{\hyperlink{classPoint}{Point}} a, \mbox{\hyperlink{classPoint}{Point}} b)
@@ -69,24 +70,6 @@ Construct a new Graham Scan object.
 \begin{DoxyReturn}{Returns}
 vector$<$\+Point$>$ set of points in convex hull in counter clockwise order 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classGrahamScan_a25068b534491cef265e5d7c038f82e7d}\label{classGrahamScan_a25068b534491cef265e5d7c038f82e7d}} 
-\index{Graham\+Scan@{Graham\+Scan}!get\+Left\+Tangent\+Point@{get\+Left\+Tangent\+Point}}
-\index{get\+Left\+Tangent\+Point@{get\+Left\+Tangent\+Point}!Graham\+Scan@{Graham\+Scan}}
-\subsubsection{\texorpdfstring{get\+Left\+Tangent\+Point()}{getLeftTangentPoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Graham\+Scan\+::get\+Left\+Tangent\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{pivot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Get the Left Tangent \mbox{\hyperlink{classPoint}{Point}}, using binary search on the convex hull from the pivot as reference. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em pivot} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{classPoint}{Point}} on the convex hull lying on the right tangent 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classGrahamScan_a79b1642bc347f2f6e517b2f3415e871d}\label{classGrahamScan_a79b1642bc347f2f6e517b2f3415e871d}} 
 \index{Graham\+Scan@{Graham\+Scan}!get\+Point@{get\+Point}}
 \index{get\+Point@{get\+Point}!Graham\+Scan@{Graham\+Scan}}
@@ -109,7 +92,7 @@ Get the \mbox{\hyperlink{classPoint}{Point}} from convex hull at position \textq
 \index{Graham\+Scan@{Graham\+Scan}!get\+Right\+Tangent\+Point@{get\+Right\+Tangent\+Point}}
 \index{get\+Right\+Tangent\+Point@{get\+Right\+Tangent\+Point}!Graham\+Scan@{Graham\+Scan}}
 \subsubsection{\texorpdfstring{get\+Right\+Tangent\+Point()}{getRightTangentPoint()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Graham\+Scan\+::get\+Right\+Tangent\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{pivot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPoint}{Point}} Graham\+Scan\+::get\+Right\+Tangent\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{pivot }\end{DoxyParamCaption})}
 
 
 
@@ -122,24 +105,6 @@ Get the Right Tangent \mbox{\hyperlink{classPoint}{Point}}, using binary search 
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classPoint}{Point}} on the convex hull lying on the right tangent 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classGrahamScan_ae308d2013337902df55fa4feae2aec60}\label{classGrahamScan_ae308d2013337902df55fa4feae2aec60}} 
-\index{Graham\+Scan@{Graham\+Scan}!get\+Tangent\+Points@{get\+Tangent\+Points}}
-\index{get\+Tangent\+Points@{get\+Tangent\+Points}!Graham\+Scan@{Graham\+Scan}}
-\subsubsection{\texorpdfstring{get\+Tangent\+Points()}{getTangentPoints()}}
-{\footnotesize\ttfamily pair$<$ \mbox{\hyperlink{classPoint}{Point}}, \mbox{\hyperlink{classPoint}{Point}} $>$ Graham\+Scan\+::get\+Tangent\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPoint}{Point}}}]{pivot }\end{DoxyParamCaption})}
-
-
-
-Get the Tangent Points using binary search in O(log(num\+Points)) 
-
-
-\begin{DoxyParams}{Parameters}
-{\em pivot} & Pivot from where tangents are drawn \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-pair$<$\+Point, Point$>$ The two tangent points on the Convex Hull 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classGrahamScan_a4996cb0d2deb3cd6f9cb3df99b91e7e8}\label{classGrahamScan_a4996cb0d2deb3cd6f9cb3df99b91e7e8}} 
 \index{Graham\+Scan@{Graham\+Scan}!insert@{insert}}
