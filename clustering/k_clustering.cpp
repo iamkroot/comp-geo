@@ -6,6 +6,9 @@
 #include <tuple>
 #include "Stopwatch.hpp"
 
+/**
+ * @brief Represents a point in 2 dimensional space
+ */
 struct Point2D {
     float x, y;
 
@@ -22,6 +25,10 @@ struct Point2D {
     }
 };
 
+/**
+ * @brief Run the greedy 2-approximation algorithm to find k-clustering of points
+ * @returns The selected centers, which center each point belongs to, and it's distance from that center
+ */
 auto greedyKCenter(const std::vector<Point2D> &points, int k) {
     std::vector<Point2D> centers;
     std::vector<int> centerLabels(points.size());
@@ -41,6 +48,9 @@ auto greedyKCenter(const std::vector<Point2D> &points, int k) {
     return std::make_tuple(centers, centerLabels, dist);
 }
 
+/**
+ * @brief Read the points and num_centers from a file or cin
+ */
 auto readDataset(std::istream* file) {
     std::vector<Point2D> points;
     int k, n;
