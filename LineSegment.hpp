@@ -49,7 +49,7 @@ struct LineSegment {
     }
 
     friend std::ostream &operator<<(std::ostream &os, const LineSegment &segment) {
-        os << "top: " << segment.top << " bottom: " << segment.bottom;
+        os << "(" << segment.top << ", " << segment.bottom << ")";
         return os;
     }
 };

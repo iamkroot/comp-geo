@@ -18,6 +18,8 @@ int main() {
             {{1, 4}, {0, 1}},
     };
 
+    std::map<Point2D<PrecisionT>, LinePtrs> intersections;  /**< Store the intersections */
+
     // Add endpoints of segments to Q
     for (auto &line : lines) {
         Q[line.top].insert(&line);
@@ -72,7 +74,7 @@ int main() {
         auto leftIter = std::prev(pos), rightIter = std::next(pos);
         LineSegment<PrecisionT>* left = nullptr, * right = nullptr;
 
-        if (leftIter != T.begin() and rightIter != T.end()) {
+        if (pos != T.begin() and rightIter != T.end()) {
             left = *leftIter;
             right = *rightIter;
         }
@@ -100,11 +102,10 @@ int main() {
         auto U = node.mapped();  /**< Set of line segments with p as upper endpoint */
 
         sweepY = p.y;
-        std::cout << p << std::endl;
         auto segments = getContainingSegments(p);
         auto LuCuU = segments | U;
-        if (not LuCuU.empty()) {
-            // TODO: Report intersections
+        if (LuCuU.size() > 1) {  // report the intersections
+            intersections[p] = LuCuU;
         }
 
         // Remove L u C from T
@@ -140,7 +141,6 @@ int main() {
                 findNewEvent(*left, *right, p);
             }
         } else {
-            // TODO: Use leftMost and rightMost to find new events
             if (leftMostPos != T.end() and leftMostPos != T.begin()) {
                 auto leftPos = std::prev(leftMostPos);
                 findNewEvent(**leftPos, **leftMostPos, p);
@@ -149,6 +149,13 @@ int main() {
                 auto rightPos = std::prev(rightMostPos);  // rightMostPos is a reverse iterator
                 findNewEvent(**rightMostPos, **rightPos, p);
             }
+        }
+    }
+
+    for (auto &intersection : intersections) {
+        std::cout << "Intersecting point: " << intersection.first << std::endl << "Segments:" << std::endl;
+        for (const auto &segment : intersection.second) {
+            std::cout << *segment << std::endl;
         }
     }
     return 0;
