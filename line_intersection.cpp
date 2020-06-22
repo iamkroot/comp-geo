@@ -1,3 +1,4 @@
+#include <fstream>
 #include <list>
 #include <map>
 #include <set>
@@ -5,19 +6,35 @@
 #include "LineSegment.hpp"
 #include "Intersection.hpp"
 
-int main() {
-    using PrecisionT = float;
-    using LinePtrs = UnorderedSet<LineSegment<PrecisionT>*>;  /**< list of line segment pointers */
-    std::map<Point2D<PrecisionT>, LinePtrs> Q;  /**< Event queue - implicitly stores set U(p) */
-    std::list<LineSegment<PrecisionT>> lines = {
-            // TODO: Read lines
-            {{1, 1}, {2, 2}},
-            {{2, 2}, {4, 4}},
-            {{1, 3}, {3, 1}},
-            {{4, 4}, {3, 2}},
-            {{1, 4}, {0, 1}},
-    };
+/**
+ * @brief Read the input either from a file or stdin
+ * @return List of lines
+ */
+template<typename PrecisionT>
+auto readLines(int argc, char* argv[]) {
+    std::ifstream file;
+    if (argc > 1) {
+        file.open(argv[1]);
+        if (!file) throw std::runtime_error("Can't open file");
+        std::cin.rdbuf(file.rdbuf());
+    }
+    std::list<LineSegment<PrecisionT>> lines;
+    int n;
+    std::cin >> n;
+    Point2D<PrecisionT> start, end;
+    while (n--) {
+        std::cin >> start.x >> start.y >> end.x >> end.y;
+        lines.emplace_back(start, end);
+    }
+    return lines;
+}
 
+int main(int argc, char* argv[]) {
+    using PrecisionT = float;
+    auto lines = readLines<PrecisionT>(argc, argv);
+
+    using LinePtrs = UnorderedSet<LineSegment<PrecisionT>*>;  /**< set of line segment pointers */
+    std::map<Point2D<PrecisionT>, LinePtrs> Q;  /**< Event queue - implicitly stores set U(p) */
     std::map<Point2D<PrecisionT>, LinePtrs> intersections;  /**< Store the intersections */
 
     // Add endpoints of segments to Q
