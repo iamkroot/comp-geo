@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "Chan.hpp"
+#include "GrahamScan.hpp"
 #include <vector>
 
 using namespace std;
@@ -16,7 +16,7 @@ int32_t main()
         cin >> x >> y;
         points.push_back(Point<int>(x, y));
     }
-    vector<Point<int>> convexHull = Chan<int>(points).getConvexHull();
+    vector<Point<int>> convexHull = GrahamScan<int>(points).getConvexHull();
     cout << "Counter Clockwise order of Convex Hull: " << endl;
     for (Point<int> &point : convexHull)
         cout << point.x << " " << point.y << endl;
