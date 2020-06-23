@@ -15,9 +15,11 @@ Some of the other well known algorithms for convex hull are:
 1. Jarvis March (Gift wrapping) algorithm | `O(n * h)`
 2. Graham Scan algorithm | `O(n log n)`
 
+Here, `n` is the number of points in the input and `h` is the number of points in the output convex hull.
+
 ### Algorithm & Complexity
 
-Chan's algorithm is inspired by both `Graham Scan` and `Jarvis March`. It uses the ideas from both the algorithms to acheive the asymptotically optimal time complexity of `O(n log h)` where `n` is the number of points in the input and `h` is the number of points on the ouput convex hull.
+Chan's algorithm is inspired by both `Graham Scan` and `Jarvis March`. It uses the ideas from both the algorithms to acheive the asymptotically optimal time complexity of `O(n log h)` where `n` is the number of points in the input and `h` is the number of points on the output convex hull.
 Here, since the complexity depends on the output hence, it is a output sensitive algorithm.
 Note, `h <= n` Hence, Chan's algorithm is atleast as good as `Graham Scan`.
 
@@ -31,7 +33,7 @@ We test the running time and space complexity of our implementation for `Chan's 
 
 ### Random datasets
 
-N (Dataset) |   time (s) (Graham Scan)     |  time (s) (Chan's) 
+n (Dataset) |   time (s) (Graham Scan)     |  time (s) (Chan's) 
 ------------|------------------------------|-------------------------
    1e2      |            0.004             |       0.010        
    1e3      |            0.009             |       0.016
@@ -44,7 +46,7 @@ N (Dataset) |   time (s) (Graham Scan)     |  time (s) (Chan's)
 
 ### Datasets with fixed h
 
-N (Dataset)  |   h    | time (s) (Graham Scan)  |  time (s) (Chan's) 
+n (Dataset)  |   h    | time (s) (Graham Scan)  |  time (s) (Chan's) 
 -------------|--------|-------------------------|----------------------
    1e2       |  1e1   |       0.008             |       0.009        
    1e3       |  1e1   |       0.011             |       0.012
