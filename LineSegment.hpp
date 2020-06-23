@@ -37,6 +37,10 @@ struct LineSegment {
     PrecisionT interpX(const PrecisionT &y) const {
         if (isVertical or isHorizontal)  // this is technically incorrect in case the line is horizontal and y != top.y
             return top.x;
+        else if (approx_eq(top.y, y))
+            return top.x;
+        else if (approx_eq(bottom.y, y))
+            return bottom.x;
         else
             return (y - bottom.y) / m + bottom.x;
     }
