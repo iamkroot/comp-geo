@@ -70,3 +70,14 @@ Moreover, if we run tests for sufficiently large `N` Chan's algorithm will be ab
 On smaller inputs Chan's algo has a comparatively large constant factor which is the reason for poor running times.
 
 
+## Tests with high resolution clock
+
+n (Dataset) |   time (us) (Graham Scan)    |  time (us) (Chan's) 
+------------|------------------------------|-------------------------
+   1e2      |            62                |          736        
+   1e3      |           453                |         3189
+   1e4      |          5791                |        30863     
+   1e5      |         16557                |       108158
+   1e6      |        186499                |       939876
+   2e6      |        393244                |      1990228
+   5e6      |       1026694                |      4841820

@@ -7,14 +7,14 @@ using namespace std;
 int main(int argc, char **argv)
 {
     srand((unsigned)time(NULL));
-    if (argc < 2)
+    if (argc < 3)
     {
-        cout << "Usage: ./tester.o numTests" << endl;
+        cout << "Usage: ./tester.o n numTests" << endl;
         return 0;
     }
-    int numTests = atoi(argv[1]);
+    int numTests = atoi(argv[2]);
     // Number of points to be used
-    int n = 5e6;
+    int n = atoi(argv[1]);
     long long maxa = 1e9;
     for (int t = 1; t <= numTests; t++)
     {
