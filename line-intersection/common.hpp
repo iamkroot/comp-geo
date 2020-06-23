@@ -9,10 +9,11 @@
  * @return True if the args are within the minimum range after which precision lo
  */
 template<typename PrecisionT1 = float, typename PrecisionT2 = float>
-static inline bool approx_eq(PrecisionT1 x, PrecisionT2 y) {
+static inline bool approx_eq(PrecisionT1 x, PrecisionT2 y, int ulp = 2) {
     if (x == y)
         return true;
-    return std::abs(x - y) < std::numeric_limits<PrecisionT1>::epsilon();
+    return std::abs(x - y) < std::numeric_limits<PrecisionT1>::epsilon() * std::abs(x + y) * ulp
+           || std::abs(x - y) < std::numeric_limits<PrecisionT1>::min();
 }
 
 template<typename PrecisionT1 = float, typename PrecisionT2 = float>
