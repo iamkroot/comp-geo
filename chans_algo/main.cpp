@@ -3,6 +3,7 @@
 #include <vector>
 
 using namespace std;
+using namespace std::chrono;
 
 int32_t main()
 {
@@ -16,8 +17,17 @@ int32_t main()
         cin >> x >> y;
         points.push_back(Point<int>(x, y));
     }
+    auto tic = high_resolution_clock::now();
     vector<Point<int>> convexHull = Chan<int>(points).getConvexHull();
+    auto toc = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(toc - tic);
+
+    cout << duration.count() << endl;
+    /*
     cout << "Counter Clockwise order of Convex Hull: " << endl;
     for (Point<int> &point : convexHull)
+    {
         cout << point.x << " " << point.y << endl;
+    }
+    */
 }
