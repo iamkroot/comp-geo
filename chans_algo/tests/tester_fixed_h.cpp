@@ -7,23 +7,43 @@ using namespace std;
 int main(int argc, char **argv)
 {
     srand((unsigned)time(NULL));
-    if (argc < 2)
+    if (argc < 4)
     {
-        cout << "Usage: ./tester.o numTests" << endl;
+        cout << "Usage: ./tester.o n h numTests" << endl;
         return 0;
     }
-    int numTests = atoi(argv[1]);
+    int numTests = atoi(argv[3]);
     // Number of points to be used
-    int n = 5e6;
-    long long maxa = 1e9;
+    int h = atoi(argv[2]);
+    int n = atoi(argv[1]) - h;
+    long long maxa = 1e6;
     for (int t = 1; t <= numTests; t++)
     {
         cout << "\rTest " << t << ": ";
         set<pair<long long, long long>> data;
         for (int i = 1; i <= n; i++)
         {
-            long long x = (rand() % maxa) * (rand() % 2 ? 1 : -1);
-            long long y = (rand() % maxa) * (rand() % 2 ? 1 : -1);
+            long long x = (rand() % maxa) * ((rand() % 2 > 0) ? 1 : -1);
+            long long y = (rand() % maxa) * ((rand() % 2 > 0) ? 1 : -1);
+            data.insert({x, y});
+        }
+        // Add four corner points of bounding box
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                int x = maxa * ((i % 2 > 0) ? 1 : -1);
+                int y = maxa * ((j % 2 > 0) ? 1 : -1);
+                data.insert({x, y});
+            }
+        }
+        // Generate h points outside the bounding box
+        for (int i = 1; i <= h - 4; i++)
+        {
+            int sx = rand() % 2 ? 1 : -1;
+            int sy = rand() % 2 ? 1 : -1;
+            long long x = ((rand() % maxa) + maxa) * sx;
+            long long y = ((rand() % maxa) + maxa) * sy;
             data.insert({x, y});
         }
         vector<Point<long long>> points;

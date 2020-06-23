@@ -12,6 +12,12 @@ BUILD = $(SRCS:$(SRC_DIR)/%.cpp=$(BUILD_DIR)/%.o)
 chan: $(BUILD) main.cpp
 	$(CXX) $(CXXFLAGS) $^ -o main_chan
 
+graham: $(BUILD) ./tests/main_graham.cpp
+	$(CXX) $(CXXFLAGS) $^ -o main_graham
+
+test_fixed_h: $(BUILD) ./tests/tester_fixed_h.cpp
+	$(CXX) $(CXXFLAGS) $^ -o test_fixed_h
+
 test_int: $(BUILD) ./tests/tester.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_int
 

@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     }
     int numTests = atoi(argv[1]);
     // Number of points to be used
-    int n = 1e5, maxa = 1e3;
+    int n = 1e6, maxa = 1e3;
     for (int t = 1; t <= numTests; t++)
     {
         cout << "\rTest " << t << ": ";
