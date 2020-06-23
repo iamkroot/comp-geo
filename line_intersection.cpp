@@ -2,6 +2,7 @@
 #include <list>
 #include <map>
 #include <set>
+#include <tuple>
 #include "UnorderedSet.hpp"
 #include "LineSegment.hpp"
 #include "Intersection.hpp"
@@ -30,10 +31,12 @@ auto readLines(int argc, char* argv[]) {
 }
 
 void printSet(auto &s) {
-//    for (const auto &item : s) {
-//        std::cout << *item << ", ";
-//    }
-//    std::cout << std::endl;
+#ifndef NDEBUG
+    for (const auto &item : s) {
+        std::cout << *item << ", ";
+    }
+    std::cout << std::endl;
+#endif
 }
 
 int main(int argc, char* argv[]) {
@@ -97,13 +100,15 @@ int main(int argc, char* argv[]) {
                 continue;
             segments.insert(*it);
         }
-        T.erase(leftDummy);
-        T.erase(rightDummy);
+
+        rightPos = T.erase(rightPos);
+        leftPos = T.erase(leftPos);
 
         delete leftDummy;
         delete rightDummy;
+        printSet(T);
 
-        return segments;
+        return std::make_tuple(segments, leftPos, rightPos);
     };
 
     auto getNeighbors = [&T, &inf](const Point2D<PrecisionT> &point) {
@@ -117,7 +122,7 @@ int main(int argc, char* argv[]) {
             left = *leftIter;
             right = *rightIter;
         }
-        T.erase(dummy);
+        T.erase(pos);
         delete dummy;
         return std::make_pair(left, right);
     };
@@ -127,7 +132,9 @@ int main(int argc, char* argv[]) {
         auto intersection = Intersection(leftSeg, rightSeg);
         if (intersection.type == IntersectionType::Intersecting or
             intersection.type == IntersectionType::CollinearOverlapping) {
+#ifndef NDEBUG
             std::cout << "INT: " << intersection.start << std::endl;
+#endif
             if ((intersection.start.y < sweepY or
                  (approx_eq(intersection.start.y, sweepY) and intersection.start.x > point.x)) and
                 not Q.contains(intersection.start)) {
@@ -140,54 +147,57 @@ int main(int argc, char* argv[]) {
         auto p = node.key();  /**< Event point */
         curEvent = p;
         auto U = node.mapped();  /**< Set of line segments with p as upper endpoint */
+#ifndef NDEBUG
+        std::cout << std::endl << p << std::endl;
+#endif
         printSet(T);
         sweepY = p.y;
-        auto segments = getContainingSegments(p);
+        auto[segments, LuCLeftPos, LuCRightPos] = getContainingSegments(p);
         auto LuCuU = segments | U;
         if (LuCuU.size() > 1) {  // report the intersections
             intersections[p] = LuCuU;
+#ifndef NDEBUG
             std::cout << "Intersections: ";
             printSet(LuCuU);
+#endif
 
         }
-
+        printSet(T);
         // Remove L u C from T
-        for (auto &segment : segments) {
-            T.erase(segment);
-        }
+        T.erase(LuCLeftPos, LuCRightPos);
         printSet(T);
 
         bool eventLower = true;  /**< Event point is only the lower endpoint of one or more lines */
 
-        decltype(T)::iterator leftMostPos = T.end(), rightMostPos = T.end();  /**< Store the leftmost segment from CuU in T */
-        PrecisionT minX = inf, maxX = -inf;
-//        decltype(T)::iterator leftMostPos = T.end();  /**< Store the leftmost segment from CuU in T */
-//        decltype(T)::reverse_iterator rightMostPos = T.rend();  /**< Store the rightmost segment from CuU in T */
-//        unsigned long minLeftDist = T.size(), minRightDist = T.size();
+//        decltype(T)::iterator leftMostPos = T.end(), rightMostPos = T.end();  /**< Store the leftmost segment from CuU in T */
+//        PrecisionT minX = inf, maxX = -inf;
+        decltype(T)::iterator leftMostPos = T.end();  /**< Store the leftmost segment from CuU in T */
+        decltype(T)::reverse_iterator rightMostPos = T.rend();  /**< Store the rightmost segment from CuU in T */
+        unsigned long minLeftDist = T.size(), minRightDist = T.size();
 
         // insert segments from C or U into T
         for (auto &segment : LuCuU) {
             if (segment->bottom == p)  // segment is from L
                 continue;
             auto[pos, _] = T.insert(segment);
-            auto x = segment->interpX(sweepY - eps);
-            if (x < minX) {
-                x = minX;
-                leftMostPos = pos;
-            }
-            if (x > maxX) {
-                x = maxX;
-                rightMostPos = pos;
-            }
-//            auto leftDist = std::distance(T.begin(), pos), rightDist = std::distance(pos, T.end());
-//            if (leftDist <= minLeftDist) {
+//            auto x = segment->interpX(sweepY - eps);
+//            if (x < minX) {
+//                x = minX;
 //                leftMostPos = pos;
-//                minLeftDist = leftDist;
 //            }
-//            if (rightDist <= minRightDist) {
-//                rightMostPos = std::make_reverse_iterator(std::next(pos));
-//                minRightDist = rightDist;
+//            if (x > maxX) {
+//                x = maxX;
+//                rightMostPos = pos;
 //            }
+            auto leftDist = std::distance(T.begin(), pos), rightDist = std::distance(pos, T.end());
+            if (leftDist <= minLeftDist) {
+                leftMostPos = pos;
+                minLeftDist = leftDist;
+            }
+            if (rightDist <= minRightDist) {
+                rightMostPos = std::make_reverse_iterator(std::next(pos));
+                minRightDist = rightDist;
+            }
             eventLower = false;  // point is either an upper end point or in interior of a segment
         }
         printSet(T);
@@ -202,15 +212,15 @@ int main(int argc, char* argv[]) {
                 auto leftPos = std::prev(leftMostPos);
                 findNewEvent(**leftPos, **leftMostPos, p);
             }
-//            if (rightMostPos != T.rend() and rightMostPos != T.rbegin()) {
-//                auto rightPos = std::prev(rightMostPos);  // rightMostPos is a reverse iterator
-//                findNewEvent(**rightMostPos, **rightPos, p);
-//            }
-            if (rightMostPos != T.end()) {
-                auto rightPos = std::next(rightMostPos);
-                if (rightPos != T.end())
-                    findNewEvent(**rightMostPos, **rightPos, p);
+            if (rightMostPos != T.rend() and rightMostPos != T.rbegin()) {
+                auto rightPos = std::prev(rightMostPos);  // rightMostPos is a reverse iterator
+                findNewEvent(**rightMostPos, **rightPos, p);
             }
+//            if (rightMostPos != T.end()) {
+//                auto rightPos = std::next(rightMostPos);
+//                if (rightPos != T.end())
+//                    findNewEvent(**rightMostPos, **rightPos, p);
+//            }
         }
     }
 
