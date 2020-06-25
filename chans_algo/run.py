@@ -5,9 +5,6 @@ import subprocess as sp
 from io import StringIO
 from pathlib import Path
 
-import matplotlib
-matplotlib.use("Agg")
-
 
 def next_run_id(results_file: Path):
     lines = results_file.read_text().splitlines()
@@ -19,7 +16,7 @@ def next_run_id(results_file: Path):
 
 
 def gen_dataset(n, h):
-    sp.call([f'./test_fixed_h {n} {h} 1'], shell=True, stdout=sp.PIPE)
+    sp.call([f'./test_long {n} 1'], shell=True, stdout=sp.PIPE)
     return
 
 
@@ -30,8 +27,7 @@ def run_convex_hull(exec_path):
 def run(
     exec_path,
     results_dir: Path,
-    run_id: str,
-    do_plot=True,
+    run_id: str
 ):
     runtime = run_convex_hull(exec_path)
     return runtime
@@ -72,14 +68,13 @@ def main():
         run_id = next_run_id(results_file)
 
     for n in gen_imp_nums(start=100):
-        for h in gen_imp_nums(stop=n):
+        for h in range(1):
             gen_dataset(n, h)
             print(f"Running test: {n} {h}")
             runtime = run(
                 args.exec_path,
                 args.results_dir,
-                f"{run_id:08}",
-                do_plot=(n < 1e4 and h < n / 10),
+                f"{run_id:08}"
             )
             with open(results_file, "a") as f:
                 w = csv.writer(f)

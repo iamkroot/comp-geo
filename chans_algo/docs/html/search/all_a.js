@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['square',['square',['../classUtils.html#abfc983311119a5d69174d8c082c00411',1,'Utils']]],
-  ['squareddistance',['squaredDistance',['../classPoint.html#add8d52440f5831624b73ffc2f0efb969',1,'Point']]]
+  ['utils',['Utils',['../classUtils.html',1,'Utils&lt; T &gt;'],['../classUtils.html#a62be9758b5598de1e77dcd41691fba48',1,'Utils::Utils()']]],
+  ['utils_2ehpp',['Utils.hpp',['../Utils_8hpp.html',1,'']]]
 ];

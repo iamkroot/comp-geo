@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['operator_28_29',['operator()',['../classGrahamScan_1_1Comparator.html#a3495ee5d0f1c01f201373b77f71514cb',1,'GrahamScan::Comparator']]],
-  ['operator_3c',['operator&lt;',['../classPoint.html#aae9fe5d91cff10489624a97c06943031',1,'Point']]],
-  ['operator_3d_3d',['operator==',['../classPoint.html#a5241a7c8bfe2a0494b789cad25b52ada',1,'Point']]],
-  ['order',['order',['../classGrahamScan.html#a586a222b7f2127410d9e20fda19c64d3',1,'GrahamScan']]],
-  ['orient',['orient',['../classPoint.html#a825f7be514210803676ed97b988ad7a0',1,'Point']]]
+  ['pivot',['pivot',['../classChan.html#a601408ef7e50863dd345e86e519710bc',1,'Chan::pivot()'],['../classGrahamScan_1_1Comparator.html#ad20dd6c63895a0924c743879f721b4a8',1,'GrahamScan::Comparator::pivot()']]],
+  ['point',['Point',['../classPoint.html',1,'Point&lt; T &gt;'],['../classPoint.html#aea76b1130f1a203722d8f2254ced8e66',1,'Point::Point()'],['../classPoint.html#a6583d71c9cddfe6e079135c724ea228c',1,'Point::Point(T a, T b)']]],
+  ['point_2ehpp',['Point.hpp',['../Point_8hpp.html',1,'']]],
+  ['points',['points',['../classChan.html#a492d7e3f31f1fd1e06f5ff464eec0492',1,'Chan']]],
+  ['print',['print',['../classPoint.html#acc51bfe04c5f9bcb8686e74d8f7b7bc1',1,'Point']]]
 ];

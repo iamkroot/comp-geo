@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tester_2ecpp',['tester.cpp',['../tester_8cpp.html',1,'']]]
+  ['x',['x',['../classPoint.html#a401d07562afaf0079121218025e66b76',1,'Point']]]
 ];

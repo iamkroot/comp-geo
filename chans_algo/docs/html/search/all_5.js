@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a196718f834091385d38586a0ce4009dc',1,'main():&#160;main.cpp'],['../bs__tester_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;bs_tester.cpp'],['../tester_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;tester.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['nextpoint',['nextPoint',['../classJarvisStep.html#a35b1bc8bd742976a76dd47a5850f67fa',1,'JarvisStep']]],
+  ['numpoints',['numPoints',['../classChan.html#a9f5d5339db322fa4a378af0832b31da9',1,'Chan::numPoints()'],['../classGrahamScan.html#a4769bbdb7caacde8c368a0074fccef19',1,'GrahamScan::numPoints()'],['../classJarvisStep.html#acda18cb9b72668a839239761aeedd7fa',1,'JarvisStep::numPoints()']]]
 ];

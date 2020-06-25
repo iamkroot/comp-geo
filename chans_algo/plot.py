@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib
+import matplotlib.pyplot as plt
 matplotlib.use("pgf")
 matplotlib.rcParams.update({
     "pgf.texsystem": "pdflatex",
@@ -8,9 +9,9 @@ matplotlib.rcParams.update({
     'text.usetex': True,
     'pgf.rcfonts': False,
 })
-matplotlib.pyplot.style.use("ggplot")
+plt.style.use("ggplot")
 
-n = 100000
+n = 1000000
 
 df = [None] * 3
 
@@ -29,12 +30,12 @@ for i in range(3):
 labels = ["Chan's", "Graham Scan", "Jarvis March"]
 
 for i in [0, 1]:
-    matplotlib.pyplot.plot(h[i], rt[i], label=labels[i])
+    plt.plot(h[i], rt[i], label=labels[i])
 
-matplotlib.pyplot.xlabel("h")
-matplotlib.pyplot.ylabel("time (us)")
-matplotlib.pyplot.xscale("log")
-matplotlib.pyplot.title(f"Running time comparison for n = {n}")
-matplotlib.pyplot.legend()
-# matplotlib.pyplot.show()
-matplotlib.pyplot.savefig(f'results/plots/n{n}.eps', format='eps')
+plt.xlabel("h")
+plt.ylabel("time (us)")
+plt.xscale("log")
+plt.title(f"Running time comparison for n = {n}")
+plt.legend()
+# plt.show()
+plt.savefig(f'results/plots/n{n}.pdf')
