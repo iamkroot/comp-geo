@@ -17,6 +17,7 @@ int main(int argc, char **argv)
     int h = atoi(argv[2]);
     int n = atoi(argv[1]) - h;
     long long maxa = 1e6;
+    long long maxr = 1e7;
     for (int t = 1; t <= numTests; t++)
     {
         cout << "\rTest " << t << ": ";
@@ -27,23 +28,11 @@ int main(int argc, char **argv)
             long long y = (rand() % maxa) * ((rand() % 2 > 0) ? 1 : -1);
             data.insert({x, y});
         }
-        // Add four corner points of bounding box
-        for (int i = 0; i < 2; i++)
+        // Generate h points on a circle with radius maxr
+        for(int i = 1; i <= h; i++)
         {
-            for (int j = 0; j < 2; j++)
-            {
-                int x = maxa * ((i % 2 > 0) ? 1 : -1);
-                int y = maxa * ((j % 2 > 0) ? 1 : -1);
-                data.insert({x, y});
-            }
-        }
-        // Generate h points outside the bounding box
-        for (int i = 1; i <= h - 4; i++)
-        {
-            int sx = rand() % 2 ? 1 : -1;
-            int sy = rand() % 2 ? 1 : -1;
-            long long x = ((rand() % maxa) + maxa) * sx;
-            long long y = ((rand() % maxa) + maxa) * sy;
+            long long x = (rand() % maxr) * ((rand() % 2 > 0) ? 1 : -1);
+            long long y = sqrt(maxr * maxr - x * x) * ((rand() % 2 > 0) ? 1 : -1);
             data.insert({x, y});
         }
         vector<Point<long long>> points;

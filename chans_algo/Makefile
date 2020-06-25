@@ -15,6 +15,9 @@ chan: $(BUILD) main.cpp
 graham: $(BUILD) ./tests/main_graham.cpp
 	$(CXX) $(CXXFLAGS) $^ -o main_graham
 
+jarvis: $(BUILD) ./tests/main_jarvis.cpp
+	$(CXX) $(CXXFLAGS) $^ -o main_jarvis
+
 test_fixed_h: $(BUILD) ./tests/tester_fixed_h.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_fixed_h
 
