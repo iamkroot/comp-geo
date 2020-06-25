@@ -59,6 +59,55 @@ def gen_smiley(num_points):
     return np.array(data)
 
 
+def gen_rand_points(qty, dist=3):
+    radius = dist * 250
+    rangeX = (-2500, 2500)
+    rangeY = (-2500, 2500)
+
+    deltas = set()
+    for x in range(-radius, radius + 1):
+        for y in range(-radius, radius + 1):
+            if x * x + y * y <= radius * radius:
+                deltas.add((x, y))
+
+    randPoints = []
+    excluded = set()
+    i = 0
+    while i < qty:
+        x = random.randrange(*rangeX)
+        y = random.randrange(*rangeY)
+        if (x, y) in excluded:
+            continue
+        randPoints.append((x, y))
+        i += 1
+        excluded.update((x + dx, y + dy) for (dx, dy) in deltas)
+    return np.array(randPoints) / 250
+
+
+def gen_points_in_disk(num_points, center, radius):
+    phi = np.random.uniform(0, 2 * np.pi, num_points)
+    r = np.random.uniform(0, radius, num_points)
+    x = r * np.cos(phi) + center[0]
+    y = r * np.sin(phi) + center[1]
+    return np.array(list(zip(x, y)))
+
+
+def gen_clusters_opt(num_points, num_centers):
+    centers = gen_rand_points(num_centers, 2)
+    cluster_sizes = np.random.multinomial(
+        num_points, [1 / float(num_centers)] * num_centers
+    )
+    points = []
+    labels = []
+    for i, cs in enumerate(zip(centers, cluster_sizes)):
+        center, size = cs
+        cluster = gen_points_in_disk(size - 1, center, 1)
+        points.append(center)
+        points.extend(cluster)
+        labels.extend(i for _ in range(size))
+    return np.array(points), labels, centers
+
+
 def gen_clusters_exact(num_points, num_centers, state=None):
     return make_blobs(
         n_samples=num_points,
@@ -109,12 +158,12 @@ def plot(
     approx_max_dist,
 ):
 
-    fig, ax = plt.subplots(ncols=1 + bool(opt_centers), sharex=True)
-    if opt_centers:
+    fig, ax = plt.subplots(ncols=1 + (opt_centers is not None), sharex=True)
+    if opt_centers is not None:
         ax1, ax2 = ax
     else:
         ax2 = ax
-    if opt_centers:
+    if opt_centers is not None:
         ax1.set_title(f"Optimal centers (cost: {opt_max_dist:.3f})")
         plot_single(ax1, points, opt_labels, opt_centers)
 
@@ -122,9 +171,7 @@ def plot(
 
     plot_single(ax2, points, approx_labels, approx_centers)
 
-    fig.suptitle(
-        f"k-center ({len(points)} points, {k} centers)"
-    )
+    fig.suptitle(f"k-center ({len(points)} points, {k} centers)")
     plt.savefig(str(fig_path))
     plt.close(fig)
 
@@ -142,14 +189,18 @@ def run(
     run_id: str,
     points: np.ndarray,
     k: int,
-    opt_labels=[],
-    opt_centers=[],
+    opt_labels=None,
+    opt_centers=None,
     do_plot=True,
 ):
 
-    opt_max_dist = opt_centers and max(
-        dist(point, opt_centers[label]) for point, label in zip(points, opt_labels)
-    ) or None
+    opt_max_dist = (
+        opt_centers is not None
+        and max(
+            dist(point, opt_centers[label]) for point, label in zip(points, opt_labels)
+        )
+        or None
+    )
 
     output = run_clustering(exec_path, points, k)
 
@@ -160,8 +211,12 @@ def run(
 
     if do_plot:
         indices = np.random.permutation(k)
-        opt_labels_map = opt_centers and apply_labels_sorted(opt_centers, opt_labels)
-        shuf_opt_labels = opt_centers and np.array([indices[opt_labels_map[x]] for x in opt_labels])
+        opt_labels_map = opt_centers is not None and apply_labels_sorted(
+            opt_centers, opt_labels
+        )
+        shuf_opt_labels = opt_centers is not None and np.array(
+            [indices[opt_labels_map[x]] for x in opt_labels]
+        )
         approx_labels_map = apply_labels_sorted(approx_centers, approx_labels)
         shuf_approx_labels = np.array(
             [indices[approx_labels_map[x]] for x in approx_labels]
@@ -230,8 +285,10 @@ def main():
     args = parser.parse_args()
     (args.results_dir / "data").mkdir(parents=True, exist_ok=True)
     (args.results_dir / "images").mkdir(exist_ok=True)
-    points = gen_smiley(500)
-    run(args.exec_path, args.results_dir, "smiley_500_5", points, 5)
+    points, labels, centers = gen_clusters_opt(200, 5)
+    run(args.exec_path, args.results_dir, "opt_200_5", points, 5, labels, centers)
+    # points = gen_smiley(500)
+    # run(args.exec_path, args.results_dir, "smiley_500_5", points, 5)
     # results_file = args.results_dir / "results.csv"
     # if not results_file.exists():
     #     # write headers if file is new
