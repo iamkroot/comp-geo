@@ -5,6 +5,7 @@ from io import StringIO
 from math import dist
 from pathlib import Path
 
+import random
 import matplotlib
 import numpy as np
 from sklearn.datasets import make_blobs
@@ -34,6 +35,28 @@ def gen_clusters_range(min_points, max_points, min_centers, max_centers, state=N
         return_centers=True,
         random_state=state,
     )
+
+
+def gen_smiley(num_points):
+    data = []
+    side = 10
+    a, b, c, d = 6, 8, 0.15, 4
+    C = (c - a) / (b * b)
+
+    i = 0
+    while i < num_points:
+        x = random.uniform(-side, side)
+        y = random.uniform(-side, side)
+
+        if (
+            (side - 1) ** 2 < x * x + y * y < side ** 2  # boundary
+            or (x + d) ** 2 + (y - d) ** 2 < 1  # left eye
+            or (x - d) ** 2 + (y - d) ** 2 < 1  # right eye
+            or (-b < x < b and c * x * x - a < y and y < C * x * x - d)  # smile
+        ):
+            data.append([x, y])
+            i += 1
+    return np.array(data)
 
 
 def gen_clusters_exact(num_points, num_centers, state=None):
@@ -77,6 +100,7 @@ def plot_single(ax, points, labels, centers, draw_legends=False):
 def plot(
     fig_path,
     points,
+    k,
     opt_labels,
     opt_centers,
     opt_max_dist,
@@ -84,16 +108,22 @@ def plot(
     approx_centers,
     approx_max_dist,
 ):
-    fig, (ax1, ax2) = plt.subplots(ncols=2, sharex=True)
 
-    ax1.set_title(f"Optimal clustering (cost: {opt_max_dist:.3f})")
-    plot_single(ax1, points, opt_labels, opt_centers)
+    fig, ax = plt.subplots(ncols=1 + bool(opt_centers), sharex=True)
+    if opt_centers:
+        ax1, ax2 = ax
+    else:
+        ax2 = ax
+    if opt_centers:
+        ax1.set_title(f"Optimal centers (cost: {opt_max_dist:.3f})")
+        plot_single(ax1, points, opt_labels, opt_centers)
 
-    ax2.set_title(f"Greedy clustering (cost: {approx_max_dist:.3f})")
+        ax2.set_title(f"Greedy algorithm (cost: {approx_max_dist:.3f})")
+
     plot_single(ax2, points, approx_labels, approx_centers)
 
     fig.suptitle(
-        f"Clustering comparision ({len(points)} points, {len(opt_centers)} centers)"
+        f"k-center ({len(points)} points, {k} centers)"
     )
     plt.savefig(str(fig_path))
     plt.close(fig)
@@ -111,33 +141,35 @@ def run(
     results_dir: Path,
     run_id: str,
     points: np.ndarray,
-    opt_labels,
-    opt_centers,
+    k: int,
+    opt_labels=[],
+    opt_centers=[],
     do_plot=True,
 ):
-    opt_max_dist = max(
+
+    opt_max_dist = opt_centers and max(
         dist(point, opt_centers[label]) for point, label in zip(points, opt_labels)
-    )
+    ) or None
 
-    output = run_clustering(exec_path, points, len(opt_centers))
+    output = run_clustering(exec_path, points, k)
 
-    # TODO: Fix mismatch of labels
     approx_centers, approx_labels, approx_dist, runtime = parse_output(
-        output, len(points), len(opt_centers)
+        output, len(points), k
     )
     approx_max_dist = max(approx_dist)
 
     if do_plot:
-        opt_labels_map = apply_labels_sorted(opt_centers, opt_labels)
+        indices = np.random.permutation(k)
+        opt_labels_map = opt_centers and apply_labels_sorted(opt_centers, opt_labels)
+        shuf_opt_labels = opt_centers and np.array([indices[opt_labels_map[x]] for x in opt_labels])
         approx_labels_map = apply_labels_sorted(approx_centers, approx_labels)
-        indices = np.random.permutation(len(opt_centers))
-        shuf_opt_labels = np.array([indices[opt_labels_map[x]] for x in opt_labels])
         shuf_approx_labels = np.array(
             [indices[approx_labels_map[x]] for x in approx_labels]
         )
         plot(
             results_dir / "images" / run_id,
             points,
+            k,
             shuf_opt_labels,
             opt_centers,
             opt_max_dist,
@@ -198,55 +230,57 @@ def main():
     args = parser.parse_args()
     (args.results_dir / "data").mkdir(parents=True, exist_ok=True)
     (args.results_dir / "images").mkdir(exist_ok=True)
-    results_file = args.results_dir / "results.csv"
-    if not results_file.exists():
-        # write headers if file is new
-        with open(results_file, "w") as f:
-            w = csv.writer(f)
-            w.writerow(
-                (
-                    "id",
-                    "num_points",
-                    "num_centers",
-                    "opt_max_dist",
-                    "approx_max_dist",
-                    "runtime",
-                )
-            )
-        run_id = 1
-    else:
-        run_id = next_run_id(results_file)
+    points = gen_smiley(500)
+    run(args.exec_path, args.results_dir, "smiley_500_5", points, 5)
+    # results_file = args.results_dir / "results.csv"
+    # if not results_file.exists():
+    #     # write headers if file is new
+    #     with open(results_file, "w") as f:
+    #         w = csv.writer(f)
+    #         w.writerow(
+    #             (
+    #                 "id",
+    #                 "num_points",
+    #                 "num_centers",
+    #                 "opt_max_dist",
+    #                 "approx_max_dist",
+    #                 "runtime",
+    #             )
+    #         )
+    #     run_id = 1
+    # else:
+    #     run_id = next_run_id(results_file)
 
     # for num_points, imp_point in gen_log_scale(start=10, stop=1e5):
     #     for num_centers, imp_center in gen_log_scale(stop=num_points / 10, scale=10):
 
-    for num_points in gen_imp_nums():
-        for num_centers in gen_imp_nums(stop=num_points // 2):
-            points, opt_labels, opt_centers = gen_clusters_exact(
-                num_points, num_centers
-            )
-            opt_max_dist, approx_max_dist, runtime = run(
-                args.exec_path,
-                args.results_dir,
-                f"{run_id:08}",
-                points,
-                opt_labels,
-                opt_centers,
-                do_plot=(num_points < 1e4 and num_centers < num_points / 10),
-            )
-            with open(results_file, "a") as f:
-                w = csv.writer(f)
-                w.writerow(
-                    (
-                        f"{run_id:08}",
-                        num_points,
-                        num_centers,
-                        opt_max_dist,
-                        approx_max_dist,
-                        runtime,
-                    )
-                )
-            run_id += 1
+    # for num_points in gen_imp_nums():
+    #     for num_centers in gen_imp_nums(stop=num_points // 2):
+    #         points, opt_labels, opt_centers = gen_clusters_exact(
+    #             num_points, num_centers
+    #         )
+    #         opt_max_dist, approx_max_dist, runtime = run(
+    #             args.exec_path,
+    #             args.results_dir,
+    #             f"{run_id:08}",
+    #             points,
+    #             opt_labels,
+    #             opt_centers,
+    #             do_plot=(num_points < 1e4 and num_centers < num_points / 10),
+    #         )
+    #         with open(results_file, "a") as f:
+    #             w = csv.writer(f)
+    #             w.writerow(
+    #                 (
+    #                     f"{run_id:08}",
+    #                     num_points,
+    #                     num_centers,
+    #                     opt_max_dist,
+    #                     approx_max_dist,
+    #                     runtime,
+    #                 )
+    #             )
+    #         run_id += 1
 
 
 if __name__ == "__main__":
