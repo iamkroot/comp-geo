@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['nextpoint',['nextPoint',['../classJarvisStep.html#a35b1bc8bd742976a76dd47a5850f67fa',1,'JarvisStep']]],
-  ['numpoints',['numPoints',['../classChan.html#a9f5d5339db322fa4a378af0832b31da9',1,'Chan::numPoints()'],['../classGrahamScan.html#a4769bbdb7caacde8c368a0074fccef19',1,'GrahamScan::numPoints()'],['../classJarvisStep.html#acda18cb9b72668a839239761aeedd7fa',1,'JarvisStep::numPoints()']]]
+  ['operator_28_29',['operator()',['../classGrahamScan_1_1Comparator.html#a3495ee5d0f1c01f201373b77f71514cb',1,'GrahamScan::Comparator']]],
+  ['operator_3c',['operator&lt;',['../classPoint.html#a7e220ceafc554dbb07185138eb3f4c20',1,'Point']]],
+  ['operator_3d_3d',['operator==',['../classPoint.html#a5859891ca462697243a8cfa1e27cb91c',1,'Point']]],
+  ['order',['order',['../classGrahamScan.html#a586a222b7f2127410d9e20fda19c64d3',1,'GrahamScan']]],
+  ['orient',['orient',['../classPoint.html#a33e4f445ed5dfc1a5f8cca8177c1a9c5',1,'Point']]]
 ];

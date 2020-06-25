@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bs_5ftester_2ecpp',['bs_tester.cpp',['../bs__tester_8cpp.html',1,'']]]
+  ['chan_2ecpp',['Chan.cpp',['../Chan_8cpp.html',1,'']]],
+  ['chan_2ehpp',['Chan.hpp',['../Chan_8hpp.html',1,'']]]
 ];

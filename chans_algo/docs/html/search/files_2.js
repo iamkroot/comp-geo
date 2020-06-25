@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['grahamscan_2ecpp',['GrahamScan.cpp',['../GrahamScan_8cpp.html',1,'']]],
-  ['grahamscan_2ehpp',['GrahamScan.hpp',['../GrahamScan_8hpp.html',1,'']]]
+  ['jarvisstep_2ecpp',['JarvisStep.cpp',['../JarvisStep_8cpp.html',1,'']]],
+  ['jarvisstep_2ehpp',['JarvisStep.hpp',['../JarvisStep_8hpp.html',1,'']]]
 ];
