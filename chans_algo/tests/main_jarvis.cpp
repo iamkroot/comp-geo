@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "Chan.hpp"
+#include "JarvisStep.hpp"
 #include <vector>
 
 using namespace std;
@@ -17,10 +17,22 @@ int32_t main()
         cin >> x >> y;
         points.push_back(Point<int>(x, y));
     }
-    vector<Point<int>> convexHull = Chan<int>(points).getConvexHull();
+    vector<Point<int>> convexHull;
+    Point<int> pivot(points[0]);
+    for (Point<int> &point : points)
+    {
+        if (point < pivot)
+            pivot = point;
+    }
+    Point<int> currPivot = pivot;
+    while (true)
+    {
+        convexHull.push_back(currPivot);
+        currPivot = JarvisStep<int>(currPivot, points).getNext();
+        if (currPivot == pivot)
+            break;
+    }
     cout << "Counter Clockwise order of Convex Hull: " << endl;
     for (Point<int> &point : convexHull)
-    {
         cout << point.x << " " << point.y << endl;
-    }
 }

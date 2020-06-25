@@ -1,4 +1,5 @@
 #include "Chan.hpp"
+using namespace std::chrono;
 
 // Allowed type bindings
 template class Chan<int>;
@@ -8,7 +9,7 @@ template class Chan<float>;
 template class Chan<double>;
 
 template <class T>
-Chan<T>::Chan(vector<Point<T>> points)
+Chan<T>::Chan(vector<Point<T>> &points)
 {
     numPoints = points.size();
     this->points = points;
@@ -23,7 +24,7 @@ Chan<T>::Chan(vector<Point<T>> points)
     }
     pivot = best;
 
-    int guessedHullSize = 3;
+    int guessedHullSize = 1000;
     while (!restrictedConvexHull(guessedHullSize))
         guessedHullSize = guessedHullSize * guessedHullSize;
 }
@@ -33,20 +34,21 @@ bool Chan<T>::restrictedConvexHull(int guessedHullSize)
 {
     // Compute partitions
     vector<vector<Point<T>>> partitions = computePartitions(guessedHullSize);
-
+    
     // Graham's step O(numPoints * log(guessedHullSize))
-    vector<GrahamScan<T>> grahamScans;
-    for (vector<Point<T>> &partition : partitions)
-        grahamScans.push_back(GrahamScan<T>(partition));
+    int numPartitions = partitions.size();
+    vector<GrahamScan<T>*> grahamScans(numPartitions);
+    for (int i = 0; i < numPartitions; i++)
+        grahamScans[i] = new GrahamScan<T>(partitions[i]);
 
     Point<T> currPivot = pivot;
     vector<Point<T>> hull;
     for (int i = 1; i <= guessedHullSize; i++)
     {
         hull.push_back(currPivot);
-        vector<Point<T>> candidatePoints;
-        for (GrahamScan<T> &grahamScan : grahamScans)
-            candidatePoints.push_back(grahamScan.getRightTangentPoint(currPivot));
+        vector<Point<T>> candidatePoints(numPartitions);
+        for (int i = 0; i < numPartitions; i++)
+            candidatePoints[i] = grahamScans[i]->getRightTangentPoint(currPivot);
 
         // Perform jarvis step
         currPivot = JarvisStep<T>(currPivot, candidatePoints).getNext();

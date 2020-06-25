@@ -53,7 +53,7 @@ public:
      * 
      * @param points Set of input points
      */
-    Chan(vector<Point<T>> points);
+    Chan(vector<Point<T>> &points);
 
     /**
      * @brief Get convex hull computed using Chan's algorithm
